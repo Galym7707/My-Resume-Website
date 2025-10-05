@@ -1,422 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Galym Yedigeyev</title>
-    <!-- Link to Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* --- Global Styles & Resets --- */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Galym Yedigeyev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root{
+      --bg:#0b1220;           /* page background */
+      --muted:#8a94a7;        /* muted text */
+      --text:#e6ebf5;         /* main text */
+      --accent:#5b9dff;       /* primary */
+      --accent-2:#7cf3d0;     /* secondary */
+      --chip:#17223b;         /* chip bg */
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --shadow:0 8px 32px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 80% -10%,rgba(123,181,255,.15),transparent),
+               radial-gradient(1000px 600px at -10% 110%,rgba(124,243,208,.12),transparent),
+               var(--bg);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--text);
+      -webkit-font-smoothing:antialiased; line-height:1.55;
+    }
+    .container{max-width:1080px;margin:40px auto;padding:0 20px}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* header */
+    .header{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;margin-bottom:26px}
+    .avatar{width:120px;height:120px;border-radius:16px;background:#111;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .headline{display:flex;flex-direction:column;gap:10px}
+    .name{font-size:32px;font-weight:700;letter-spacing:.3px}
+    .title{font-size:14px;color:var(--muted)}
+    .quick{display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;font-size:13px}
+    .btn:hover{border-color:rgba(255,255,255,.2)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#6ab1ff);color:#061123; font-weight:600}
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f4f4f4; /* Light background for contrast */
-            color: #333;
-            line-height: 1.6;
-        }
+    /* layout */
+    .grid{display:grid;grid-template-columns:320px 1fr;gap:22px}
+    @media (max-width:1024px){.grid{grid-template-columns:1fr}}
 
-        .resume-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            background-color: #fff;
-            display: flex;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            min-height: 90vh; /* Ensure it takes up height */
-        }
+    /* side card */
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card + .card{margin-top:16px}
+    .card-header{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+    .card-header h3{margin:0;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .card-body{padding:16px 18px}
 
-        /* --- Left Column (Dark Blue) --- */
-        .left-column {
-            background-color: #1c2b4d; /* Dark blue from image */
-            color: #fff;
-            padding: 40px 30px;
-            width: 35%;
-        }
+    .kv{display:grid;gap:10px}
+    .kv-row{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13.5px}
+    .kv-row i{width:18px;text-align:center;color:var(--accent)}
 
-        .profile-pic img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 30px auto;
-            border: 5px solid #3e507a; /* Slightly lighter border */
-        }
+    /* chips & badges */
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--chip);border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12.5px}
 
-        .left-column h2 {
-            color: #a9c1e8; /* Lighter blue for headings */
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #3e507a;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .badge{font-size:11px;border:1px solid var(--line);padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.04)}
+    .badge.level.intl{color:var(--accent)}
+    .badge.level.national{color:#ffd166}
+    .badge.level.city{color:var(--accent-2)}
+    .badge.level.school{color:#b5bed0}
+    .badge.award{color:#e6ebf5}
 
-        .left-column p,
-        .left-column li {
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            color: #e0e0e0; /* Light grey text */
-        }
+    /* content sections */
+    .section{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .section + .section{margin-top:16px}
+    .section-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line)}
+    .section-header h2{margin:0;font-size:16px}
+    .section-body{padding:8px 18px}
 
-        .left-column .section {
-            margin-bottom: 30px;
-        }
+    /* grouped lists */
+    .group{padding:10px 0}
+    .group-title{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em;margin:6px 0 8px}
+    .items{display:flex;flex-direction:column;gap:12px}
+    .item{display:flex;flex-direction:column;gap:4px;padding:12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+    .item h4{margin:0;font-size:14.5px}
+    .meta{color:var(--muted);font-size:12.5px}
+    .tagline{font-size:13.5px;margin-top:4px;color:var(--text)}
 
-        .left-column ul {
-            list-style: none;
-            padding: 0;
-        }
+    /* lists */
+    ul.clean{list-style:none;padding-left:0;margin:0}
 
-        .left-column ul li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-        }
-
-        .left-column ul li i {
-            margin-right: 10px;
-            color: #a9c1e8; /* Icon color */
-            width: 20px; /* Fixed width for alignment */
-            text-align: center;
-        }
-
-        .left-column a {
-            color: #e0e0e0;
-            text-decoration: none;
-            word-break: break-all; /* Prevent long links from overflowing */
-            transition: color 0.3s ease;
-        }
-
-        .left-column a:hover {
-            color: #fff;
-        }
-
-        /* --- Right Column (White) --- */
-        .right-column {
-            background-color: #fff;
-            padding: 40px 40px;
-            width: 65%;
-        }
-
-        .header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .header h1 {
-            font-size: 2.8em;
-            margin-bottom: 5px;
-            color: #1c2b4d; /* Dark blue */
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .header .subtitle {
-            font-size: 1.1em;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            color: #444;
-        }
-
-        .contact-info i {
-            margin-right: 10px;
-            color: #1c2b4d;
-             width: 20px; /* Fixed width for alignment */
-            text-align: center;
-        }
-
-         .right-column h2 {
-            font-size: 1.4em;
-            color: #1c2b4d;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e0e0e0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .timeline-item {
-            margin-bottom: 30px;
-            position: relative;
-            padding-left: 30px; /* Space for the timeline line/dot */
-        }
-
-        /* Timeline vertical line */
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 5px;
-            bottom: -5px; /* Extend slightly below */
-            width: 2px;
-            background-color: #c9d6e8; /* Light blueish grey */
-        }
-        /* Remove line for the last item in a section if needed (optional) */
-        /* .timeline-section > .timeline-item:last-child::before { display: none; } */
-
-        /* Timeline dot */
-         .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 0px;
-            top: 5px;
-            width: 14px;
-            height: 14px;
-            background-color: #1c2b4d; /* Dark blue dot */
-            border-radius: 50%;
-            border: 2px solid #fff; /* White border around dot */
-            z-index: 1;
-        }
-
-
-        .timeline-item h3 {
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 3px;
-            font-weight: 500;
-        }
-        .timeline-item .sub-info {
-            color: #555;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-            font-style: italic;
-        }
-
-        .timeline-item p,
-        .timeline-item ul {
-            font-size: 0.95em;
-            color: #444;
-            margin-bottom: 10px;
-        }
-
-        .timeline-item ul {
-            list-style: disc;
-            padding-left: 20px; /* Indent bullets */
-        }
-         .timeline-item ul li {
-             margin-bottom: 5px;
-         }
-
-        /* --- Achievements Section Enhancements --- */
-        .achievements .timeline-item h3 i.achievement-icon {
-            margin-right: 10px;
-            font-size: 1em; /* Same size as h3 text */
-            vertical-align: -0.1em; /* Adjust for better alignment with text */
-        }
-        .achievement-icon.gold-medal { color: #ffd700; }
-        .achievement-icon.silver-medal { color: #c0c0c0; }
-        .achievement-icon.bronze-medal { color: #cd7f32; }
-
-
-        .skills p, .hobbies p {
-            font-size: 0.95em;
-            color: #444;
-            line-height: 1.8;
-        }
-
-        /* --- Footer --- */
-        .footer {
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px; /* Push below content */
-            background-color: #f0f0f0; /* Light grey background */
-            color: #555;
-            font-size: 0.8em;
-            clear: both; /* Ensure it's below floated/flex items if needed */
-             border-top: 1px solid #ddd;
-        }
-         /* Make footer span across container width if needed */
-        /* This requires moving footer outside .resume-container or adjusting container */
-        body > .footer { /* Style if footer is direct child of body */
-             max-width: 1000px;
-             margin: 0 auto; /* Center it like the resume */
-             margin-top: -30px; /* Adjust spacing if moved outside */
-        }
-
-
-        /* --- Basic Responsiveness --- */
-        @media (max-width: 768px) {
-            .resume-container {
-                flex-direction: column;
-                margin: 15px;
-            }
-            .left-column, .right-column {
-                width: 100%;
-            }
-            .left-column {
-                padding: 30px 20px;
-            }
-             .right-column {
-                padding: 30px 20px;
-            }
-            .header h1 {
-                font-size: 2.2em;
-            }
-            .profile-pic img {
-                width: 120px;
-                height: 120px;
-            }
-        }
-
-    </style>
+    /* subtle separators */
+    .sep{height:1px;background:var(--line);margin:10px 0}
+  </style>
 </head>
 <body>
+  <div class="container">
 
-    <div class="resume-container">
-        <!-- ========== LEFT COLUMN ========== -->
-        <div class="left-column">
-            <div class="profile-pic">
-                <img src="MZrZUQ_LV-photo.png" alt="Galym Yedigeyev">
+    <!-- ===== Header ===== -->
+    <div class="header">
+      <div class="avatar">
+        <img src="MZrZUQ_LV-photo.png" alt="Galym Yedigeyev" />
+      </div>
+      <div class="headline">
+        <div class="name">Galym Yedigeyev</div>
+        <div class="title">12th Grade • NIS PhM Almaty • AI & Full‑Stack • Chess First‑Class Player</div>
+        <div class="quick">
+          <a class="btn primary" href="https://mpox-detector.up.railway.app" target="_blank"><i class="fa-solid fa-wand-magic-sparkles"></i> Mpoxdetection.ai (AI)</a>
+          <a class="btn" href="https://github.com/Galym7707" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="btn" href="https://t.me/kemmeq" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
+          <a class="btn" href="mailto:galymtashtek@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- ===== Left rail ===== -->
+      <div>
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-user"></i><h3>About</h3></div>
+          <div class="card-body">
+            Ambitious student with strong results in AI, programming, research, chess, and leadership. Seeking opportunities to build real‑world products and grow within competitive tech programs.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-address-card"></i><h3>Contacts</h3></div>
+          <div class="card-body kv">
+            <div class="kv-row"><i class="fa-solid fa-location-dot"></i> Almaty, Kazakhstan</div>
+            <div class="kv-row"><i class="fa-solid fa-phone"></i> +7 707 567 31 95</div>
+            <div class="kv-row"><i class="fa-solid fa-envelope"></i> galymtashtek@gmail.com</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-language"></i><h3>Languages</h3></div>
+          <div class="card-body">
+            <ul class="clean">
+              <li>Kazakh <span class="badge level school">C2</span></li>
+              <li>Russian <span class="badge level school">C2</span></li>
+              <li>English <span class="badge level school">C1</span> (IELTS 7.0)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Skills</h3></div>
+          <div class="card-body">
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">C++</span>
+              <span class="chip">Kotlin</span>
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">PHP</span>
+              <span class="chip">Computer Vision</span>
+              <span class="chip">Full‑Stack</span>
+              <span class="chip">Chess Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><i class="fa-solid fa-graduation-cap"></i><h3>Education</h3></div>
+          <div class="card-body">
+            <div class="item">
+              <div>
+                <h4>Nazarbayev Intellectual School of Physics and Mathematics</h4>
+
+                <div class="meta">Almaty • Scholarship winner • 2020 — Present • Grad: 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Main content ===== -->
+      <div>
+        <div class="section">
+          <div class="section-header">
+            <h2>Projects</h2>
+          </div>
+          <div class="section-body items">
+            <div class="item">
+              <div>
+                <h4>Mpoxdetection.ai — AI Full‑Stack Web App</h4>
+                <div class="meta">Image‑based detection of monkeypox/cowpox/chickenpox/measles • Hosted on Railway</div>
+                <div class="badges">
+                  <span class="badge">Python</span><span class="badge">Computer Vision</span><span class="badge">Model Inference</span><span class="badge">Frontend+Backend</span>
+                </div>
+              </div>
+              <div class="meta"><a class="btn" href="https://mpox-detector.up.railway.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</a></div>
+            </div>
+            <div class="item">
+              <div>
+                <h4>Freelance Web Dev (project‑based)</h4>
+                <div class="meta">Delivered full‑stack sites (from ₸15,000 ≈ $27,38). Focus on clean UX and performance.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-header">
+            <h2>Achievements (Grouped)</h2>
+          </div>
+          <div class="section-body">
+            <!-- AI / Tech -->
+            <div class="group">
+              <div class="group-title"><i class="fa-solid fa-robot"></i> AI & Tech</div>
+              <div class="items">
+                <div class="item">
+                  <h4>Fizmat AI Olympiad (FAIO)</h4>
+                  <div class="badges">
+                    <span class="badge level national">National</span>
+                    <span class="badge award">Bronze</span>
+                  </div>
+                  <div class="meta">Among 301 teams • 2024</div>
+                </div>
+
+                <div class="item">
+                  <h4>VII Scientific and Practical Conference "SCIENCE. TECHNOLOGY. ALGORITHIMIZATION. PROGRAMMING" </h4>
+                  <div class="badges">
+                    <span class="badge level intl">International</span>
+                    <span class="badge award">Bronze</span>
+                    <span class="badge">STEM Category</span>
+                  </div>
+                  <div class="meta">Among 375 participants • 2025</div>
+                </div>
+
+                <div class="item">
+                  <h4>Olympiad in Informatics</h4>
+                  <div class="badges">
+                    <span class="badge level school">School</span>
+                    <span class="badge award">3rd</span>
+                  </div>
+                  <div class="meta">NIS PhM Almaty • 2023</div>
+                </div>
+              </div>
             </div>
 
-            <div class="section about-me">
-                <h2>About Me</h2>
-                <p>Student at NIS PhM Almaty</p>
-                <p>
-                    Ambitious student at NIS PhM Almaty with strong analytical skills and a drive for growth. Seeking an opportunity to contribute to NFactorial Incubator 2025.
-                </p>
+            <div class="sep"></div>
+            <!-- Startups / Entrepreneurship -->
+            <div class="group">
+              <div class="group-title"><i class="fa-solid fa-lightbulb"></i> Startups & Entrepreneurship</div>
+              <div class="items">
+                <div class="item">
+                  <h4>Caspian Startup 2024</h4>
+                  <div class="badges">
+                    <span class="badge level intl">International</span>
+                    <span class="badge award">Finalist</span>
+                  </div>
+                  <div class="meta">2024</div>
+                </div>
+                <div class="item">
+                  <h4>Central Asian Startup Cup</h4>
+                  <div class="badges">
+                    <span class="badge level intl">International</span>
+                    <span class="badge award">Top‑15</span>
+                  </div>
+                  <div class="meta">100+ teams • 4 countries</div>
+                </div>
+              </div>
             </div>
 
-            <div class="section links">
-                <h2>Links</h2>
-                <ul>
-                    <li><i class="fab fa-github"></i><a href="https://github.com/Galym7707" target="_blank">github.com/Galym7707</a></li>
-                    <li><i class="fab fa-instagram"></i><a href="https://www.instagram.com/edigeev_07/" target="_blank">instagram.com/edigeev_07/</a></li>
-                    <li><i class="fab fa-telegram"></i><a href="https://t.me/kemmeq" target="_blank">t.me/kemmeq</a></li>
-                     <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/77075673195" target="_blank">wa.me/77075673195</a></li>
+            <div class="sep"></div>
+            <!-- Research / Academics -->
+            <div class="group">
+              <div class="group-title"><i class="fa-solid fa-flask"></i> Research & Academics</div>
+              <div class="items">
+                <div class="item">
+                  <h4>JASTARForum Sciencefair </h4>
+                  <div class="badges">
+                    <span class="badge level national">National</span>
+                    <span class="badge award">1st</span>
+                  </div>
+                  <div class="meta">Among 300 participants • 2025</div>
+                </div>
+                <div class="item">
+                  <h4>Galymind National Research Paper</h4>
+                  <div class="badges">
+                    <span class="badge level national">National</span>
+                    <span class="badge award">2nd</span>
+                  </div>
+                  <div class="meta">History & Culture • Evaluated by Prof. Michael Bechtel (NU) • 2025</div>
+                </div>
+                <div class="item">
+                  <h4>Festival of Scientific Ideas</h4>
+                  <div class="badges">
+                    <span class="badge level school">School</span>
+                    <span class="badge award">Participant</span>
+                  </div>
+                  <div class="meta">School scientific project competition</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sep"></div>
+            <!-- Competitions / Hackathons -->
+            <div class="group">
+              <div class="group-title"><i class="fa-solid fa-code"></i> Competitions & Hackathons</div>
+              <div class="items">
+                <div class="item">
+                  <h4>Samsung Solve for Tomorrow</h4>
+                  <div class="badges">
+                    <span class="badge level national">National</span>
+                    <span class="badge award">Semi‑finalist</span>
+                  </div>
+                  <div class="meta">2025</div>
+                </div>
+                <div class="item">
+                  <h4>HackOrgKz Hackathon</h4>
+                  <div class="badges">
+                    <span class="badge level national">National</span>
+                    <span class="badge award">Participant</span>
+                  </div>
+                  <div class="meta">Sep 20, 2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sep"></div>
+            <!-- Chess -->
+            <div class="group">
+              <div class="group-title"><i class="fa-solid fa-chess-knight"></i> Chess</div>
+              <div class="items">
+                <div class="item">
+                  <h4>First‑Class Chess Player</h4>
+                  <div class="badges">
+                    <span class="badge level national">Adult Category</span>
+                    <span class="badge award">Title</span>
+                  </div>
+                </div>
+                <div class="item">
+                  <h4>City Chess Tournament (Almaty Schools)</h4>
+                  <div class="badges">
+                    <span class="badge level city">City</span>
+                    <span class="badge award">2nd</span>
+                  </div>
+                  <div class="meta">Also awarded 100,000 ₸ prize</div>
+                </div>
+                <div class="item">
+                  <h4>KBTU OPEN 2024</h4>
+                  <div class="badges">
+                    <span class="badge level intl">International</span>
+                    <span class="badge award">Top‑20</span>
+                  </div>
+                  <div class="meta">2024</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-header">
+            <h2>Leadership, Teaching & Service</h2>
+          </div>
+          <div class="section-body items">
+            <div class="item">
+              <div>
+                <h4>Teacher — Inclusive Academy</h4>
+                <div class="badges">
+                  <span class="badge level intl">International</span>
+                  <span class="badge award">Teaching</span>
+                </div>
+                <div class="tagline">Taught high‑level Python to 3 children (8–9 y.o.) with disabilities; also introduced logic & problem‑solving.</div>
+                <div class="meta">2023</div>
+              </div>
+            </div>
+            <div class="item">
+              <div>
+                <h4>Mentor — NIS PhM (5× 8th‑graders)</h4>
+                <div class="badges">
+                  <span class="badge level school">School</span>
+                  <span class="badge award">Mentorship</span>
+                </div>
+                <ul class="clean tagline">
+                  <li>Organized staff appreciation on March 8 (cards + Kazakh chocolate).</li>
+                  <li>Delivered a 40‑minute lesson for 7th graders on adaptation, study planning & Pomodoro method.</li>
                 </ul>
+                <div class="meta">2024–2025 • Received an official letter of gratitude</div>
+              </div>
             </div>
-
-            <div class="section languages">
-                <h2>Languages</h2>
-                 <ul>
-                     <li><i class="fas fa-language"></i>Russian</li>
-                     <li><i class="fas fa-language"></i>Kazakh</li>
-                     <li><i class="fas fa-language"></i>English</li>
-                 </ul>
+            <div class="item">
+              <div>
+                <h4>School Chess Club — Teacher</h4>
+                <div class="badges">
+                  <span class="badge level school">School</span>
+                  <span class="badge award">Coaching</span>
+                </div>
+                <div class="meta">Sept 2023 — Jan 2025 (planned)</div>
+              </div>
             </div>
-
+          </div>
         </div>
 
-        <!-- ========== RIGHT COLUMN ========== -->
-        <div class="right-column">
-            <div class="header">
-                <h1>GALYM YEDIGEYEV</h1>
-                <p class="subtitle">11TH GRADE STUDENT</p>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i>Sokpakbaeva, 66/3, Almaty, 050038, Kazakhstan</p>
-                    <p><i class="fas fa-phone"></i>+77075673195</p>
-                    <p><i class="fas fa-envelope"></i>galymtashtek@gmail.com</p>
-                </div>
-            </div>
-
-            <div class="section experience timeline-section">
-                <h2>Work Experience</h2>
-                <div class="timeline-item">
-                    <h3>Web Developer</h3>
-                    <p class="sub-info">Freelance (Project-based work)</p>
-                    <ul>
-                        <li>Developed and implemented full-stack websites on a freelance basis, including backend and frontend, with projects sold starting from 15,000 KZT.</li>
-                        <li>Created a personal website with integrated AI for diagnosing four types of skin diseases (monkeypox, cowpox, chickenpox, measles) based on uploaded image analysis. Website link: https://mpox-detector.up.railway.app/</li>
-                     </ul>
-                </div>
-            </div>
-
-             <div class="section education timeline-section">
-                <h2>Education</h2>
-                <div class="timeline-item">
-                    <h3>NIS PhM (Nazarbayev Intellectual School of Physics and Mathematics)</h3>
-                    <p class="sub-info">Almaty | Expected Graduation: 2026</p>
-                     <p><strong>11th Grade</strong></p>
-                     <p>Won a full scholarship to NIS PhM in 2020.</p>
-                </div>
-            </div>
-
-             <div class="section skills">
-                <h2>Skills</h2>
-                 <p>
-                     <strong>Stack:</strong> Python, Kotlin, C++, HTML, CSS, Javascript, PHP <br>
-                     <strong>Completed Jusan Singularity Course:</strong> Kotlin <br>
-                     <strong>Chess:</strong> Category 1 Player
-                 </p>
-            </div>
-
-             <div class="section hobbies">
-                <h2>Hobbies</h2>
-                <p>Chess, Computer Games, Programming</p>
-            </div>
-
-            <div class="section extracurricular timeline-section">
-                 <h2>Extracurricular Activities</h2>
-                 <div class="timeline-item">
-                     <h3>Volunteer Teacher</h3>
-                     <p class="sub-info">Volunteer League, Almaty | July 2023 - Oct. 2023</p>
-                     <p>Participated in various volunteer projects. One involved teaching children with disabilities at the Inclusive Academy. Taught them basic Python programming and chess.</p>
-                 </div>
-                 <div class="timeline-item">
-                     <h3>Teacher</h3>
-                      <p class="sub-info">School Chess Club, Almaty | Sept. 2023 - Jan. 2025 (Planned)</p>
-                     <p>Taught chess fundamentals to junior grades (7th-9th).</p>
-                 </div>
-             </div>
-
-            <div class="section courses timeline-section">
-                 <h2>Courses</h2>
-                 <div class="timeline-item">
-                     <h3>9-month Python course on algoritmika.org</h3>
-                     <p class="sub-info">Algoritmika | Sept. 2022 - May 2023</p>
-                 </div>
-                 <div class="timeline-item">
-                      <h3>Python for Beginners</h3>
-                     <p class="sub-info">Yandex Lyceum | Oct. 2023 - Apr. 2024</p>
-                 </div>
-             </div>
-
-            <!-- ========== ACHIEVEMENTS SECTION ========== -->
-            <div class="section achievements timeline-section">
-                <h2>Achievements</h2>
-
-                <div class="timeline-item">
-                    <h3><i class="fas fa-medal achievement-icon bronze-medal"></i> Bronze at Fizmat AI Olympiad (FAIO)</h3>
-                    <p class="sub-info">National Level | 2024</p>
-                    <p>Won a bronze medal, competing among 301 teams.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3><i class="fas fa-trophy achievement-icon gold-medal"></i> 1st Place (STEM) - Almaty Jastar Forum</h3>
-                    <p class="sub-info">National Level | 2025</p>
-                    <p>Won a fund of 200,000 KZT in the STEM category.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3><i class="fas fa-medal achievement-icon silver-medal"></i> 2nd Place (Silver) - Chess Tournament (Almaty Schools)</h3>
-                    <p class="sub-info">City Level | 2023</p>
-                    <p>Achieved 2nd place at the city-level chess tournament among Almaty schools.</p>
-                </div>
-            </div>
-            <!-- ========== END OF ACHIEVEMENTS SECTION ========== -->
-
+        <div class="section">
+          <div class="section-header">
+            <h2>Courses & Certifications</h2>
+          </div>
+          <div class="section-body items">
+            <div class="item"><div><h4>Yandex Lyceum — Python (offline)</h4><div class="badges"><span class="badge">Python</span></div><div class="meta">Oct 2023 — Apr 2024 • Alumni</div></div></div>
+            <div class="item"><div><h4>Algoritmika — 9‑month Python course</h4><div class="badges"><span class="badge">Python</span></div><div class="meta">Sept 2022 — May 2023</div></div></div>
+            <div class="item"><div><h4>Jusan Singularity — Kotlin</h4><div class="badges"><span class="badge">Kotlin</span></div><div class="meta">Completed track</div></div></div>
+            <div class="item"><div><h4>IELTS 7.0 • SAT 1400</h4><div class="badges"><span class="badge">English C1</span></div><div class="meta">Testing</div></div></div>
+          </div>
         </div>
-    </div>
 
-    <div class="footer">
-        <p>This resume website was created by Galym Yedigeyev.</p>
+      </div>
     </div>
-
+  </div>
 </body>
 </html>
