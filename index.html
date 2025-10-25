@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Galym Yedigeyev — Undergraduate CV (Light, One Page)</title>
+<title>Galym Yedigeyev — Undergraduate CV (Light • One Page • Plain Links)</title>
 
-<!-- Fonts -->
+<!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  /* =====================  LIGHT THEME (soft colors)  ===================== */
+  /* ======================= LIGHT THEME (soft, print-friendly) ======================= */
   :root{
     --bg:#ffffff;
     --paper:#ffffff;
@@ -20,21 +20,21 @@
     --muted:#475569;
     --line:#e5e7eb;
 
-    --blue:#2563eb;      /* soft primary */
-    --mint:#10b981;      /* soft accent */
-    --peach:#fb923c;     /* soft accent */
-    --violet:#7c3aed;    /* soft accent */
+    --sky:#38bdf8;     /* soft accents for tags */
+    --mint:#34d399;
+    --peach:#fb923c;
+    --violet:#a78bfa;
 
-    --chip:#f1f5f9;      /* tag background */
+    --chip:#f1f5f9;    /* tag background */
     --chip-text:#0f172a;
 
     --radius:14px;
     --shadow:0 6px 20px rgba(2,6,23,.06);
 
-    --base:11pt;         /* compact for one page */
-    --h1:22pt;
+    --base:11pt;       /* compact for one page */
+    --h1:21pt;
     --h2:12pt;
-    --h3:11.4pt;
+    --h3:11.2pt;
   }
 
   *{box-sizing:border-box}
@@ -42,8 +42,8 @@
   body{
     margin:0;
     background:
-      radial-gradient(1200px 700px at 90% -10%, #93c5fd22, transparent),
-      radial-gradient(1000px 600px at -10% 110%, #a7f3d033, transparent),
+      radial-gradient(1000px 560px at 92% -8%, #93c5fd26, transparent),
+      radial-gradient(900px 520px at -10% 108%, #a7f3d026, transparent),
       var(--bg);
     color:var(--text);
     font:var(--base)/1.45 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -51,7 +51,7 @@
     print-color-adjust:exact; -webkit-print-color-adjust:exact;
   }
 
-  .page{max-width:1040px;margin:26px auto;padding:0 18px}
+  .page{max-width:1040px;margin:24px auto;padding:0 18px}
   .wrap{
     background:var(--paper);
     border:1px solid var(--line);
@@ -60,55 +60,55 @@
     padding:18px;
   }
 
-  /* =====================  Header  ===================== */
-  .header{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;margin-bottom:10px}
-  .avatar{width:96px;height:96px;border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff}
+  /* ======================= Header ======================= */
+  .header{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center;margin-bottom:8px}
+  .avatar{width:92px;height:92px;border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff}
   .avatar img{width:100%;height:100%;object-fit:cover}
   h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
-  .subtitle{margin:2px 0 4px 0;color:var(--muted);font-weight:600}
-  .links{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:7px 12px;border-radius:999px;border:1px solid var(--line);
-    background:var(--soft); text-decoration:none; color:var(--text); font-weight:600; font-size:10.5pt;
+  .subtitle{margin:2px 0 6px 0;color:var(--muted);font-weight:600}
+  .links-plain{
+    font-size:10.6pt;color:var(--text);
+    background:linear-gradient(180deg,#f8fafc,#fff);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:8px 10px;
   }
-  .pill:hover{border-color:#cbd5e1}
-  .pill.primary{background:linear-gradient(135deg,#93c5fd,#a7f3d0);border-color:#bfdbfe}
+  .links-plain .dot{color:#94a3b8;margin:0 6px}
 
-  /* =====================  Layout  ===================== */
-  .grid{display:grid;grid-template-columns:320px 1fr;gap:14px}
+  /* ======================= Layout ======================= */
+  .grid{display:grid;grid-template-columns:320px 1fr;gap:12px}
   @media (max-width:960px){.grid{grid-template-columns:1fr}}
 
-  /* =====================  Cards / Sections  ===================== */
+  /* ======================= Cards / Sections ======================= */
   .card,.section{
     background:#fff;border:1px solid var(--line);border-radius:var(--radius);
   }
-  .card + .card, .section + .section{margin-top:12px}
+  .card + .card, .section + .section{margin-top:10px}
 
   .hd{
-    padding:10px 12px;border-bottom:1px solid var(--line);
+    padding:8px 10px;border-bottom:1px solid var(--line);
     display:flex;align-items:center;gap:8px;
     background:linear-gradient(180deg,#f8fafc,#ffffff);
   }
   .hd h3{margin:0;font-size:var(--h2);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-  .bd{padding:10px 12px}
+  .bd{padding:10px 10px}
 
   .items{display:flex;flex-direction:column;gap:8px}
   .item{padding:8px;border:1px solid var(--line);border-radius:12px;background:#fff}
   .item h4{margin:0 0 2px 0;font-size:var(--h3)}
   .meta{color:var(--muted);font-size:10.3pt}
-  .bullets{margin:6px 0 0 0;padding-left:18px}
+  .bullets{margin:6px 0 0 0;padding-left:16px}
   .bullets li{margin:2px 0}
 
   .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{
     background:var(--chip);color:var(--chip-text);
-    border:1px solid #dbe3ef;border-radius:999px;padding:4px 8px;font-size:10.3pt
+    border:1px solid #dbe3ef;border-radius:999px;padding:3px 8px;font-size:10.1pt
   }
-  .chip.blue{background:#eff6ff;border-color:#bfdbfe}
-  .chip.mint{background:#ecfdf5;border-color:#a7f3d0}
-  .chip.peach{background:#fff7ed;border-color:#fed7aa}
-  .chip.violet{background:#f5f3ff;border-color:#ddd6fe}
+  .chip.sky{background:#e0f2fe;border-color:#bae6fd}
+  .chip.mint{background:#dcfce7;border-color:#bbf7d0}
+  .chip.peach{background:#ffedd5;border-color:#fed7aa}
+  .chip.violet{background:#ede9fe;border-color:#ddd6fe}
 
   .group-title{
     margin:4px 0 4px 0;color:var(--muted);
@@ -118,16 +118,14 @@
   /* Keep blocks intact for print */
   .avoid{break-inside:avoid;page-break-inside:avoid}
 
-  /* =====================  Print (fit to ONE A4)  ===================== */
+  /* ======================= Print (ONE A4 page) ======================= */
   @media print{
     @page{size:A4;margin:10mm}
     body{background:#fff}
     .page{margin:0;padding:0}
     .wrap{box-shadow:none;border-radius:0;border:none}
-    .pill{border:none;background:none;padding:0}
-    a[href^="http"]::after{content:" (" attr(href) ")"; color:#6b7280; font-size:9.5pt}
     .grid{gap:10px}
-    :root{--base:10.2pt;--h1:20pt;--h2:11pt;--h3:10.8pt}
+    :root{--base:10.1pt;--h1:19.5pt;--h2:10.8pt;--h3:10.6pt}
   }
 </style>
 </head>
@@ -135,23 +133,26 @@
   <div class="page">
     <div class="wrap">
 
-      <!-- =====================  HEADER  ===================== -->
+      <!-- ======================= HEADER ======================= -->
       <header class="header avoid">
         <div class="avatar"><img src="MZrZUQ_LV-photo.png" alt="Portrait of Galym Yedigeyev" /></div>
         <div>
           <h1>Galym Yedigeyev</h1>
           <div class="subtitle">Prospective CS/AI Undergraduate • NIS PhM Almaty (Grade 12, Class of 2026)</div>
-          <div class="links">
-            <a class="pill primary" href="mailto:galymtashtek@gmail.com">Email</a>
-            <a class="pill" href="https://github.com/Galym7707" target="_blank" rel="noopener">GitHub</a>
-            <a class="pill" href="https://mpox-detector.up.railway.app" target="_blank" rel="noopener">Project: MpoxDetection.ai</a>
-            <a class="pill" href="https://t.me/kemmeq" target="_blank" rel="noopener">Freelance (Telegram)</a>
-            <a class="pill" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn (optional)</a>
+
+          <!-- PLAIN, NON-CLICKABLE LINKS (show full URLs for PDF) -->
+          <div class="links-plain">
+            Almaty, Kazakhstan <span class="dot">•</span> +7 707 567 31 95 <span class="dot">•</span>
+            Email: galymtashtek@gmail.com <span class="dot">•</span>
+            GitHub: github.com/Galym7707 <span class="dot">•</span>
+            Project: mpox-detector.up.railway.app <span class="dot">•</span>
+            Freelance: t.me/kemmeq <span class="dot">•</span>
+            LinkedIn: linkedin.com/in/galym
           </div>
         </div>
       </header>
 
-      <!-- =====================  GRID  ===================== -->
+      <!-- ======================= GRID ======================= -->
       <div class="grid">
         <!-- ===== Left Column ===== -->
         <aside class="avoid">
@@ -159,19 +160,9 @@
           <section class="card avoid">
             <div class="hd"><h3>Profile</h3></div>
             <div class="bd">
-              Motivated student focused on computer science and applied AI. Enjoys building useful tools, competing in STEM events, and mentoring younger students. Seeking an undergraduate program where I can deepen theory and deploy real projects.
-            </div>
-          </section>
-
-          <section class="card avoid">
-            <div class="hd"><h3>Contact</h3></div>
-            <div class="bd">
-              <div class="items">
-                <div class="item">
-                  <div class="meta">Almaty, Kazakhstan • +7 707 567 31 95</div>
-                  <div class="meta">galymtashtek@gmail.com • github.com/Galym7707</div>
-                </div>
-              </div>
+              Motivated student focused on computer science and applied AI. I like turning ideas into simple tools,
+              competing in STEM events, and mentoring younger students. Seeking a program where I can deepen theory and
+              keep deploying real projects.
             </div>
           </section>
 
@@ -179,13 +170,13 @@
             <div class="hd"><h3>Skills</h3></div>
             <div class="bd">
               <div class="chips">
-                <span class="chip blue">Python</span>
-                <span class="chip blue">C++</span>
-                <span class="chip blue">Kotlin</span>
-                <span class="chip mint">Computer Vision</span>
-                <span class="chip mint">Data Analysis</span>
+                <span class="chip sky">Python</span>
+                <span class="chip sky">C++</span>
+                <span class="chip sky">Kotlin</span>
                 <span class="chip peach">HTML &amp; CSS</span>
                 <span class="chip peach">JavaScript</span>
+                <span class="chip mint">Computer Vision</span>
+                <span class="chip mint">Data Analysis</span>
                 <span class="chip violet">Git / GitHub</span>
               </div>
             </div>
@@ -196,9 +187,9 @@
             <div class="bd">
               <ul class="bullets">
                 <li>Algorithms & Data Structures (self-study)</li>
-                <li>AP/IB-level Math: Calculus, Probability</li>
-                <li>Physics (Mechanics, Electricity & Magnetism)</li>
-                <li>Yandex Lyceum (Python), Kotlin track (Jusan)</li>
+                <li>Calculus, Probability & Statistics</li>
+                <li>Physics: Mechanics; Electricity & Magnetism</li>
+                <li>Yandex Lyceum (Python), Jusan Kotlin track</li>
               </ul>
             </div>
           </section>
@@ -248,7 +239,7 @@
                 </div>
                 <div class="item">
                   <h4>City Chess Tournament — 2nd</h4>
-                  <div class="meta">Almaty Schools • 2024 • Prize: ₸100,000; First-Class rating holder.</div>
+                  <div class="meta">Almaty Schools • 2024 • Prize: 100,000 ₸; First-Class rating holder.</div>
                 </div>
               </div>
             </div>
@@ -263,24 +254,22 @@
                   <div class="meta">Image-based triage for skin-rash diseases (monkeypox, measles, etc.). Role: model inference + full-stack.</div>
                   <ul class="bullets">
                     <li>Optimized preprocessing and deployment for low-latency inference.</li>
-                    <li>Built simple, privacy-respecting UI for quick screening.</li>
+                    <li>Designed a clear UI for quick, privacy-respecting screening.</li>
                   </ul>
-                  <div class="chips" style="margin-top:6px">
-                    <span class="chip blue">Python</span><span class="chip blue">FastAPI</span><span class="chip peach">HTML/CSS/JS</span><span class="chip mint">Railway</span>
-                    <a class="pill" style="margin-top:6px" href="https://mpox-detector.up.railway.app" target="_blank" rel="noopener">Open Project</a>
+                  <div class="meta" style="margin-top:4px">
+                    URL (plain): mpox-detector.up.railway.app
                   </div>
                 </div>
 
                 <div class="item">
                   <h4>Freelance Web Projects</h4>
-                  <div class="meta">Delivered small websites and dashboards with a focus on accessibility and performance.</div>
+                  <div class="meta">Delivered small websites and dashboards with focus on accessibility and performance.</div>
                   <ul class="bullets">
                     <li>Landing pages, analytics widgets, and simple CRMs for local clients.</li>
                     <li>Communication, scoping, and on-time delivery (project-based).</li>
                   </ul>
-                  <div class="chips" style="margin-top:6px">
-                    <a class="pill" href="https://t.me/kemmeq" target="_blank" rel="noopener">Contact for Freelance</a>
-                    <a class="pill" href="https://github.com/Galym7707" target="_blank" rel="noopener">Code Samples (GitHub)</a>
+                  <div class="meta" style="margin-top:4px">
+                    Contact (plain): t.me/kemmeq • Code samples: github.com/Galym7707
                   </div>
                 </div>
               </div>
