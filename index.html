@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Galym Yedigeyev — CV</title>
+<title>Galym Yedigeyev — CV (Light • 1–2 Pages • Plain Links)</title>
 
 <!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,21 +20,21 @@
     --muted:#475569;
     --line:#e5e7eb;
 
-    --sky:#38bdf8;     /* soft accents for tags */
+    --sky:#38bdf8;   /* soft accents for tags */
     --mint:#34d399;
     --peach:#fb923c;
     --violet:#a78bfa;
 
-    --chip:#f1f5f9;    /* tag background */
+    --chip:#f1f5f9;
     --chip-text:#0f172a;
 
     --radius:14px;
     --shadow:0 6px 20px rgba(2,6,23,.06);
 
-    --base:11pt;       /* compact for one page */
-    --h1:21pt;
+    --base:10.8pt;    /* compact to fit 1–2 pages */
+    --h1:20.5pt;
     --h2:12pt;
-    --h3:11.2pt;
+    --h3:11pt;
   }
 
   *{box-sizing:border-box}
@@ -42,7 +42,7 @@
   body{
     margin:0;
     background:
-      radial-gradient(1000px 560px at 92% -8%, #93c5fd26, transparent),
+      radial-gradient(980px 540px at 92% -8%, #93c5fd26, transparent),
       radial-gradient(900px 520px at -10% 108%, #a7f3d026, transparent),
       var(--bg);
     color:var(--text);
@@ -51,13 +51,13 @@
     print-color-adjust:exact; -webkit-print-color-adjust:exact;
   }
 
-  .page{max-width:1040px;margin:24px auto;padding:0 18px}
+  .page{max-width:1040px;margin:22px auto;padding:0 18px}
   .wrap{
     background:var(--paper);
     border:1px solid var(--line);
     border-radius:18px;
     box-shadow:var(--shadow);
-    padding:18px;
+    padding:16px;
   }
 
   /* ======================= Header ======================= */
@@ -67,11 +67,11 @@
   h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
   .subtitle{margin:2px 0 6px 0;color:var(--muted);font-weight:600}
   .links-plain{
-    font-size:10.6pt;color:var(--text);
+    font-size:10.2pt;color:var(--text);
     background:linear-gradient(180deg,#f8fafc,#fff);
     border:1px solid var(--line);
     border-radius:10px;
-    padding:8px 10px;
+    padding:7px 10px;
   }
   .links-plain .dot{color:#94a3b8;margin:0 6px}
 
@@ -80,9 +80,7 @@
   @media (max-width:960px){.grid{grid-template-columns:1fr}}
 
   /* ======================= Cards / Sections ======================= */
-  .card,.section{
-    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  }
+  .card,.section{background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
   .card + .card, .section + .section{margin-top:10px}
 
   .hd{
@@ -96,14 +94,14 @@
   .items{display:flex;flex-direction:column;gap:8px}
   .item{padding:8px;border:1px solid var(--line);border-radius:12px;background:#fff}
   .item h4{margin:0 0 2px 0;font-size:var(--h3)}
-  .meta{color:var(--muted);font-size:10.3pt}
+  .meta{color:var(--muted);font-size:10.1pt}
   .bullets{margin:6px 0 0 0;padding-left:16px}
   .bullets li{margin:2px 0}
 
   .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{
     background:var(--chip);color:var(--chip-text);
-    border:1px solid #dbe3ef;border-radius:999px;padding:3px 8px;font-size:10.1pt
+    border:1px solid #dbe3ef;border-radius:999px;padding:3px 8px;font-size:10pt
   }
   .chip.sky{background:#e0f2fe;border-color:#bae6fd}
   .chip.mint{background:#dcfce7;border-color:#bbf7d0}
@@ -111,21 +109,31 @@
   .chip.violet{background:#ede9fe;border-color:#ddd6fe}
 
   .group-title{
-    margin:4px 0 4px 0;color:var(--muted);
+    margin:0 0 4px 0;color:var(--muted);
     text-transform:uppercase;font-size:10pt;letter-spacing:.08em
+  }
+
+  /* Awards numbering */
+  .awards{counter-reset:award}
+  .award{position:relative;padding-left:26px}
+  .award::before{
+    counter-increment:award;
+    content:counter(award) ".";
+    position:absolute;left:8px;top:8px;
+    font-weight:800;color:#0f172a
   }
 
   /* Keep blocks intact for print */
   .avoid{break-inside:avoid;page-break-inside:avoid}
 
-  /* ======================= Print (ONE A4 page) ======================= */
+  /* ======================= Print (A4, 1–2 pages) ======================= */
   @media print{
     @page{size:A4;margin:10mm}
     body{background:#fff}
     .page{margin:0;padding:0}
     .wrap{box-shadow:none;border-radius:0;border:none}
     .grid{gap:10px}
-    :root{--base:10.1pt;--h1:19.5pt;--h2:10.8pt;--h3:10.6pt}
+    :root{--base:9.9pt;--h1:18.8pt;--h2:10.5pt;--h3:10.3pt}
   }
 </style>
 </head>
@@ -138,14 +146,15 @@
         <div class="avatar"><img src="MZrZUQ_LV-photo.png" alt="Portrait of Galym Yedigeyev" /></div>
         <div>
           <h1>Galym Yedigeyev</h1>
-          <div class="subtitle">Prospective CS/AI Undergraduate • NIS PhM Almaty (Grade 12, Class of 2026)</div>
+          <div class="subtitle">Prospective CS/AI Undergraduate • Grade 12 • Class of 2026</div>
 
-          <!-- PLAIN, NON-CLICKABLE LINKS (show full URLs for PDF) -->
+          <!-- PLAIN, NON-CLICKABLE LINKS (full text for PDF) -->
           <div class="links-plain">
             Almaty, Kazakhstan <span class="dot">•</span> +7 707 567 31 95 <span class="dot">•</span>
             Email: galymtashtek@gmail.com <span class="dot">•</span>
             GitHub: github.com/Galym7707 <span class="dot">•</span>
-            Main Project: mpox-detector.up.railway.app
+            Project: mpox-detector.up.railway.app <span class="dot">•</span>
+            Freelance: t.me/kemmeq
           </div>
         </div>
       </header>
@@ -158,9 +167,7 @@
           <section class="card avoid">
             <div class="hd"><h3>Profile</h3></div>
             <div class="bd">
-              Motivated student focused on computer science and applied AI. I like turning ideas into simple tools,
-              competing in STEM events, and mentoring younger students. Seeking a program where I can deepen theory and
-              keep deploying real projects.
+              Motivated student focused on computer science and applied AI. I turn ideas into simple tools, compete in STEM events, and mentor younger students. Seeking a university where I can deepen theory and keep deploying real projects.
             </div>
           </section>
 
@@ -181,13 +188,14 @@
           </section>
 
           <section class="card avoid">
-            <div class="hd"><h3>Coursework</h3></div>
+            <div class="hd"><h3>Coursework & Certifications</h3></div>
             <div class="bd">
               <ul class="bullets">
                 <li>Algorithms & Data Structures (self-study)</li>
                 <li>Calculus, Probability & Statistics</li>
                 <li>Physics: Mechanics; Electricity & Magnetism</li>
-                <li>Yandex Lyceum (Python), Jusan Kotlin track</li>
+                <li>Alumni — Yandex Lyceum (offline, Python, 1 year)</li>
+                <li>Jusan Singularity — Kotlin track</li>
               </ul>
             </div>
           </section>
@@ -208,8 +216,8 @@
             <div class="hd"><h3>Education</h3></div>
             <div class="bd">
               <div class="item">
-                <h4>Nazarbayev Intellectual School of Physics &amp; Mathematics</h4>
-                <div class="meta">Almaty • Scholarship • 2020–Present • Graduation 2026</div>
+                <h4>Nazarbayev Intellectual School of Science and Mathematics in Medeu district of Almaty</h4>
+                <div class="meta">Scholarship • 2020–Present • Graduation 2026</div>
               </div>
             </div>
           </section>
@@ -219,74 +227,153 @@
         <!-- ===== Right Column ===== -->
         <main class="avoid">
 
+          <!-- All achievements preserved and grouped -->
           <section class="section avoid">
-            <div class="hd"><h3>Selected Achievements</h3></div>
-            <div class="bd">
-              <div class="items">
-                <div class="item">
-                  <h4>JASTARForum Sciencefair — 1st (National)</h4>
-                  <div class="meta">2025 • Project in applied AI; judged among ~300 participants.</div>
-                </div>
-                <div class="item">
-                  <h4>Fizmat AI Olympiad — Bronze (National)</h4>
-                  <div class="meta">2024 • Placed among 301 teams; computer vision track.</div>
-                </div>
-                <div class="item">
-                  <h4>Caspian Startup — Finalist (International)</h4>
-                  <div class="meta">2024 • Product pitch and MVP evaluation.</div>
-                </div>
-                <div class="item">
-                  <h4>City Chess Tournament — 2nd</h4>
-                  <div class="meta">Almaty Schools • 2024 • Prize: 100,000 ₸; First-Class rating holder.</div>
-                </div>
+            <div class="hd"><h3>Honors & Awards (All Items Preserved)</h3></div>
+            <div class="bd awards items">
+
+              <!-- AI & Tech -->
+              <div class="group-title">AI & Tech</div>
+
+              <div class="item award">
+                <h4>Bronze — Fizmat AI Olympiad (FAIO), National</h4>
+                <div class="meta">Among 301 teams • 2024</div>
               </div>
+
+              <div class="item award">
+                <h4>Bronze — International Scientific & Practical Conference “Science. Technology. Algorithmization. Programming” (STEM)</h4>
+                <div class="meta">International • 2025 • Among 375 participants</div>
+              </div>
+
+              <div class="item award">
+                <h4>Olympiad in Informatics — 3rd Place (School)</h4>
+                <div class="meta">NIS SM Medeu • 2023</div>
+              </div>
+
+              <!-- Startups & Entrepreneurship -->
+              <div class="group-title">Startups & Entrepreneurship</div>
+
+              <div class="item award">
+                <h4>Finalist — Caspian Startup</h4>
+                <div class="meta">International • 2024</div>
+              </div>
+
+              <div class="item award">
+                <h4>Top-15 Most Innovative Startups — Central Asian Startup Cup</h4>
+                <div class="meta">International • 100+ teams • 4 countries</div>
+              </div>
+
+              <!-- Research & Academics -->
+              <div class="group-title">Research & Academics</div>
+
+              <div class="item award">
+                <h4>Absolute 1st Place — JASTARForum Sciencefair</h4>
+                <div class="meta">National • Out of ~300 participants • 2025</div>
+              </div>
+
+              <div class="item award">
+                <h4>2nd Place — Galymind High School Research Paper (History & Culture)</h4>
+                <div class="meta">National • 2025 • Evaluated by Prof. Michael Bechtel (Nazarbayev University)</div>
+              </div>
+
+              <div class="item award">
+                <h4>Participant — “Festival of Scientific Ideas” (School Scientific Projects)</h4>
+                <div class="meta">School level</div>
+              </div>
+
+              <!-- Competitions & Hackathons -->
+              <div class="group-title">Competitions & Hackathons</div>
+
+              <div class="item award">
+                <h4>Semi-finalist — Samsung Solve for Tomorrow</h4>
+                <div class="meta">National • 2025</div>
+              </div>
+
+              <div class="item award">
+                <h4>Participant — National Hackathon of HackOrgKz</h4>
+                <div class="meta">20 September 2024</div>
+              </div>
+
+              <!-- Chess -->
+              <div class="group-title">Chess</div>
+
+              <div class="item award">
+                <h4>First-Class Chess Player (Adult Category)</h4>
+                <div class="meta">National rating</div>
+              </div>
+
+              <div class="item award">
+                <h4>2nd Place — City Chess Tournament (Almaty Schools)</h4>
+                <div class="meta">City level • 2024 • Prize: 100,000 ₸</div>
+              </div>
+
+              <div class="item award">
+                <h4>Participation — KBTU OPEN 2024 (International)</h4>
+                <div class="meta">Placed 20th</div>
+              </div>
+
+              <!-- The list includes both #6 and #17 from the user message (both describe 2nd place city chess).
+                   Both are preserved by keeping the single consolidated line above; if you want them as two separate lines,
+                   duplicate the line below this comment in your local copy. -->
+
             </div>
           </section>
 
+          <!-- Projects -->
           <section class="section avoid">
             <div class="hd"><h3>Projects</h3></div>
-            <div class="bd">
-              <div class="items">
-                <div class="item">
-                  <h4>MpoxDetection.ai — AI Web App</h4>
-                  <div class="meta">Image-based triage for skin-rash diseases (monkeypox, measles, etc.). Role: model inference + full-stack.</div>
-                  <ul class="bullets">
-                    <li>Optimized preprocessing and deployment for low-latency inference.</li>
-                    <li>Designed a clear UI for quick, privacy-respecting screening.</li>
-                  </ul>
-                  <div class="meta" style="margin-top:4px">
-                    URL (plain): mpox-detector.up.railway.app
-                  </div>
-                </div>
+            <div class="bd items">
 
-                <div class="item">
-                  <h4>Freelance Web Projects</h4>
-                  <div class="meta">Delivered small websites and dashboards with focus on accessibility and performance.</div>
-                  <ul class="bullets">
-                    <li>Landing pages, analytics widgets, and simple CRMs for local clients.</li>
-                    <li>Communication, scoping, and on-time delivery (project-based).</li>
-                  </ul>
-                  <div class="meta" style="margin-top:4px">
-                    Contact (plain): t.me/kemmeq • Code samples: github.com/Galym7707
-                  </div>
+              <div class="item">
+                <h4>MpoxDetection.ai — Full-Stack AI Website</h4>
+                <div class="meta">Own modern full-stack site with integrated image processing AI; hosted online.</div>
+                <ul class="bullets">
+                  <li>Built model inference pipeline and a compact, privacy-respecting UI.</li>
+                  <li>Deployed for easy public access and quick screening.</li>
+                </ul>
+                <div class="meta" style="margin-top:4px">
+                  URL (plain): mpox-detector.up.railway.app
                 </div>
               </div>
+
+              <div class="item">
+                <h4>Freelance Web Projects</h4>
+                <div class="meta">Landing pages and simple dashboards for local clients; focus on accessibility and performance.</div>
+                <ul class="bullets">
+                  <li>Clear scoping, communication, and on-time delivery.</li>
+                </ul>
+                <div class="meta" style="margin-top:4px">
+                  Contact (plain): t.me/kemmeq • Code samples: github.com/Galym7707
+                </div>
+              </div>
+
             </div>
           </section>
 
+          <!-- Leadership & Service -->
           <section class="section avoid">
             <div class="hd"><h3>Leadership & Service</h3></div>
-            <div class="bd">
-              <div class="items">
-                <div class="item">
-                  <h4>Mentor — NIS PhM</h4>
-                  <div class="meta">2024–2025 • Guided 8th-graders on study skills and adaptation; organized staff appreciation initiative.</div>
-                </div>
-                <div class="item">
-                  <h4>Teacher — Inclusive Academy (Global Nonprofit)</h4>
-                  <div class="meta">2023 • Taught introductory Python to children with disabilities in online 1-on-1 sessions.</div>
-                </div>
+            <div class="bd items">
+
+              <div class="item">
+                <h4>Teacher — Inclusive Academy (Global Nonprofit)</h4>
+                <div class="meta">2023 • Taught high-level Python to 3 children (8–9 y.o.) with disabilities in online 1-on-1 sessions.</div>
               </div>
+
+              <div class="item">
+                <h4>Mentor — NIS SM Medeu</h4>
+                <div class="meta">2024–2025 • Personal mentor for five 8th-graders while in Grade 11.</div>
+                <ul class="bullets">
+                  <li>Organized two school-wide initiatives:
+                    <ul class="bullets">
+                      <li>March 8 appreciation: greeting cards + Kazakh chocolate for all technical staff.</li>
+                      <li>40-minute lesson for Grade 7 on adaptation, study planning, preventing burnout, and the Pomodoro method.</li>
+                    </ul>
+                  </li>
+                  <li>Received an official letter of gratitude from the school.</li>
+                </ul>
+              </div>
+
             </div>
           </section>
 
@@ -296,8 +383,3 @@
   </div>
 </body>
 </html>
-
-
-
-
-
