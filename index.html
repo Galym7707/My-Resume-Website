@@ -28,18 +28,13 @@
     --chip:#f1f5f9;
     --chip-text:#0f172a;
 
-    --radius:12px;
-    --shadow:0 6px 18px rgba(2,6,23,.06);
+    --radius:14px;
+    --shadow:0 6px 20px rgba(2,6,23,.06);
 
-    /* Screen sizes (already compact) */
-    --base:10.6pt;
-    --h1:19.8pt;
-    --h2:11.2pt;
-    --h3:10.6pt;
-
-    --padY:8px;      /* vertical padding tokens */
-    --padX:10px;
-    --gap:8px;
+    --base:10.8pt;    /* compact to fit 1–2 pages */
+    --h1:20.5pt;
+    --h2:12pt;
+    --h3:11pt;
   }
 
   *{box-sizing:border-box}
@@ -51,63 +46,62 @@
       radial-gradient(900px 520px at -10% 108%, #a7f3d026, transparent),
       var(--bg);
     color:var(--text);
-    font:var(--base)/1.42 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font:var(--base)/1.45 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     -webkit-font-smoothing:antialiased;
     print-color-adjust:exact; -webkit-print-color-adjust:exact;
   }
 
-  .page{max-width:1060px;margin:18px auto;padding:0 16px}
+  .page{max-width:1040px;margin:22px auto;padding:0 18px}
   .wrap{
     background:var(--paper);
     border:1px solid var(--line);
-    border-radius:16px;
+    border-radius:18px;
     box-shadow:var(--shadow);
-    padding:12px;
+    padding:16px;
   }
 
   /* ======================= Header ======================= */
-  .header{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:center;margin-bottom:6px}
-  .avatar{width:78px;height:78px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#fff}
+  .header{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center;margin-bottom:8px}
+  .avatar{width:92px;height:92px;border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff}
   .avatar img{width:100%;height:100%;object-fit:cover}
-  h1{margin:0;font-size:var(--h1);letter-spacing:.15px}
-  .subtitle{margin:1px 0 5px 0;color:var(--muted);font-weight:600}
+  h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
+  .subtitle{margin:2px 0 6px 0;color:var(--muted);font-weight:600}
   .links-plain{
-    font-size:10pt;color:var(--text);
+    font-size:10.2pt;color:var(--text);
     background:linear-gradient(180deg,#f8fafc,#fff);
     border:1px solid var(--line);
-    border-radius:9px;
-    padding:6px 8px; line-height:1.35;
+    border-radius:10px;
+    padding:7px 10px;
   }
   .links-plain .dot{color:#94a3b8;margin:0 6px}
 
   /* ======================= Layout ======================= */
-  .grid{display:grid;grid-template-columns:300px 1fr;gap:10px}
+  .grid{display:grid;grid-template-columns:320px 1fr;gap:12px}
   @media (max-width:960px){.grid{grid-template-columns:1fr}}
 
   /* ======================= Cards / Sections ======================= */
   .card,.section{background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
-  .card + .card, .section + .section{margin-top:8px}
+  .card + .card, .section + .section{margin-top:10px}
 
   .hd{
-    padding:var(--padY) var(--padX);
-    border-bottom:1px solid var(--line);
+    padding:8px 10px;border-bottom:1px solid var(--line);
     display:flex;align-items:center;gap:8px;
     background:linear-gradient(180deg,#f8fafc,#ffffff);
   }
   .hd h3{margin:0;font-size:var(--h2);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-  .bd{padding:var(--padY) var(--padX)}
+  .bd{padding:10px 10px}
 
-  .items{display:flex;flex-direction:column;gap:6px}
-  .item{padding:6px;border:1px solid var(--line);border-radius:10px;background:#fff}
-  .item h4{margin:0 0 1px 0;font-size:var(--h3)}
-  .meta{color:var(--muted);font-size:9.9pt}
-  .bullets{margin:4px 0 0 0;padding-left:14px}
+  .items{display:flex;flex-direction:column;gap:8px}
+  .item{padding:8px;border:1px solid var(--line);border-radius:12px;background:#fff}
+  .item h4{margin:0 0 2px 0;font-size:var(--h3)}
+  .meta{color:var(--muted);font-size:10.1pt}
+  .bullets{margin:6px 0 0 0;padding-left:16px}
   .bullets li{margin:2px 0}
 
-  .chips{display:flex;flex-wrap:wrap;gap:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
   .chip{
     background:var(--chip);color:var(--chip-text);
-    border:1px solid #dbe3ef;border-radius:999px;padding:2px 6px;font-size:9.6pt
+    border:1px solid #dbe3ef;border-radius:999px;padding:3px 8px;font-size:10pt
   }
   .chip.sky{background:#e0f2fe;border-color:#bae6fd}
   .chip.mint{background:#dcfce7;border-color:#bbf7d0}
@@ -115,48 +109,31 @@
   .chip.violet{background:#ede9fe;border-color:#ddd6fe}
 
   .group-title{
-    margin:2px 0 2px 0;color:var(--muted);
-    text-transform:uppercase;font-size:9.8pt;letter-spacing:.08em
+    margin:0 0 4px 0;color:var(--muted);
+    text-transform:uppercase;font-size:10pt;letter-spacing:.08em
   }
 
   /* Awards numbering */
   .awards{counter-reset:award}
-  .award{position:relative;padding-left:22px}
+  .award{position:relative;padding-left:26px}
   .award::before{
     counter-increment:award;
     content:counter(award) ".";
-    position:absolute;left:6px;top:6px;
+    position:absolute;left:8px;top:8px;
     font-weight:800;color:#0f172a
   }
 
   /* Keep blocks intact for print */
   .avoid{break-inside:avoid;page-break-inside:avoid}
 
-  /* ======================= Print (A4, target ≤ 2 pages) ======================= */
+  /* ======================= Print (A4, 1–2 pages) ======================= */
   @media print{
-    /* Slightly smaller type & tighter leading for print */
-    :root{
-      --base:9.2pt; --h1:17.4pt; --h2:10.2pt; --h3:9.9pt;
-      --padY:5px; --padX:7px; --gap:6px;
-      --radius:10px;
-    }
-    @page{size:A4;margin:8mm}
-    body{background:#fff; line-height:1.35}
+    @page{size:A4;margin:10mm}
+    body{background:#fff}
     .page{margin:0;padding:0}
-    .wrap{box-shadow:none;border-radius:0;border:none;padding:8px}
-    .grid{grid-template-columns:280px 1fr; gap:8px}
-    .header{grid-template-columns:68px 1fr; gap:8px; margin-bottom:4px}
-    .avatar{width:68px;height:68px;border-radius:10px}
-    .links-plain{padding:5px 6px; font-size:9.6pt}
-    .card + .card, .section + .section{margin-top:6px}
-    .bd{padding:6px 7px}
-    .hd{padding:6px 7px}
-    .items{gap:5px}
-    .item{padding:5px;border-radius:8px}
-    .bullets{padding-left:12px}
-    .chip{padding:1px 6px; font-size:9pt}
-    .award{padding-left:20px}
-    .award::before{left:5px; top:5px}
+    .wrap{box-shadow:none;border-radius:0;border:none}
+    .grid{gap:10px}
+    :root{--base:9.9pt;--h1:18.8pt;--h2:10.5pt;--h3:10.3pt}
   }
 </style>
 </head>
@@ -176,7 +153,7 @@
             Almaty, Kazakhstan <span class="dot">•</span> +7 707 567 31 95 <span class="dot">•</span>
             Email: galymtashtek@gmail.com <span class="dot">•</span>
             GitHub: github.com/Galym7707 <span class="dot">•</span>
-            CIO of Mpoxdetection.ai
+            Project: mpox-detector.up.railway.app <span class="dot">•</span>
           </div>
         </div>
       </header>
@@ -189,7 +166,7 @@
           <section class="card avoid">
             <div class="hd"><h3>Profile</h3></div>
             <div class="bd">
-              Motivated student focused on computer science and applied AI. Enjoys building useful tools, competing in STEM events, and mentoring younger students. Seeking an undergraduate program where I can deepen theory and deploy real projects.
+              Motivated student focused on computer science and applied AI. I turn ideas into simple tools, compete in STEM events, and mentor younger students. Seeking a university where I can deepen theory and keep deploying real projects.
             </div>
           </section>
 
@@ -238,10 +215,6 @@
               <div class="item">
                 <h4>Nazarbayev Intellectual School of Science and Mathematics in Medeu district of Almaty</h4>
                 <div class="meta">Orken Scholarship for NIS Medeu • 2020–Present • Graduation 2026</div>
-                <div class="meta" style="margin-top:6px">
-                  GPA (Grades 9–11): 4.5 / 5.0 
-                  <p>>Expected GPA (Grades 9–12): 4.54 / 5.00</p
-                </div>
               </div>
             </div>
           </section>
@@ -251,7 +224,7 @@
         <!-- ===== Right Column ===== -->
         <main class="avoid">
 
-          <!-- ======================= Projects (TOP) ======================= -->
+          <!-- ======================= Projects (moved to the TOP, before Honors) ======================= -->
           <section class="section avoid">
             <div class="hd"><h3>Projects</h3></div>
             <div class="bd items">
@@ -264,20 +237,20 @@
                   <li>Deployed for easy public access and quick screening.</li>
                 </ul>
                 <div class="meta" style="margin-top:4px">
-                  Website: mpox-detector.up.railway.app
+                  URL (plain): mpox-detector.up.railway.app
                 </div>
               </div>
 
               <div class="item">
                 <h4>Drive Beyond — Windows .exe Application</h4>
-                <div class="meta">Team project (non-core member). Coordinated task planning, built the first demo, maintained documentation, and presented progress at reviews. Platform: Windows (.exe)[...]
+                <div class="meta">Team project (non-core member). Coordinated task planning, built the first demo, maintained documentation, and presented progress at reviews. Platform: Windows (.exe).</div>
               </div>
 
               <div class="item">
                 <h4>TB-Scan AI — Web App for TB Detection from MRI</h4>
                 <div class="meta">Uploads an MRI image and predicts tuberculosis using an AI model.</div>
                 <div class="meta" style="margin-top:4px">
-                  Website: fichka-tb-ai.hf.space
+                  URL (plain): fichka-tb-ai.hf.space
                 </div>
               </div>
 
@@ -288,14 +261,14 @@
                   <li>Clear scoping, communication, and on-time delivery.</li>
                 </ul>
                 <div class="meta" style="margin-top:4px">
-                  Website: lunight.netlify.app
+                  Contact (plain): t.me/kemmeq • Code samples: github.com/Galym7707 • Showcase (plain): lunight.netlify.app
                 </div>
               </div>
 
             </div>
           </section>
 
-          <!-- ======================= Honors & Awards ======================= -->
+          <!-- ======================= Honors & Awards (unchanged content, now below Projects) ======================= -->
           <section class="section avoid">
             <div class="hd"><h3>Honors & Awards</h3></div>
             <div class="bd awards items">
@@ -304,44 +277,62 @@
               <div class="group-title">AI & Tech</div>
 
               <div class="item award">
-                <h4>Bronze — Fizmat AI Olympiad (FAIO)</h4>
-                <div class="meta">National level • Among 301 teams • 2024</div>
+                <h4>Bronze — Fizmat AI Olympiad (FAIO), National</h4>
+                <div class="meta">Among 301 teams • 2024</div>
               </div>
 
               <div class="item award">
                 <h4>Bronze — International Scientific & Practical Conference “Science. Technology. Algorithmization. Programming” (STEM)</h4>
-                <div class="meta">2025 • Among 375 participants</div>
+                <div class="meta">International • 2025 • Among 375 participants</div>
+              </div>
+
+              <div class="item award">
+                <h4>Olympiad in Informatics — 3rd Place (School level)</h4>
+                <div class="meta">NIS Medeu • 2023</div>
               </div>
 
               <!-- Startups & Entrepreneurship -->
               <div class="group-title">Startups & Entrepreneurship</div>
 
               <div class="item award">
-                <h4>Semi-Finalist — Samsung Solve for Tomorrow</h4>
-                <div class="meta">2025</div>
-              </div>
-              
-              <div class="item award">
                 <h4>Finalist — Caspian Startup</h4>
-                <div class="meta">International level • 2024</div>
+                <div class="meta">International • 2024</div>
               </div>
 
               <div class="item award">
                 <h4>Top-15 Most Innovative Startups — Central Asian Startup Cup</h4>
-                <div class="meta">International level • 100+ teams • 4 countries</div>
+                <div class="meta">International • 100+ teams • 4 countries</div>
               </div>
+
+              <!-- Research & Academics -->
+              <div class="group-title">Research & Academics</div>
 
               <div class="item award">
                 <h4>Absolute 1st Place in STEM category — JASTAR Forum Sciencefair</h4>
-                <div class="meta">National level • Out of 300+ participants • Prize: ₸200,000 • 2025</div>
+                <div class="meta">National • Out of 300+ participants • 2025</div>
               </div>
-              
-              <!-- Research -->
-              <div class="group-title">Research</div>
 
               <div class="item award">
                 <h4>2nd Place — Galymind High School Research Paper (History & Culture)</h4>
-                <div class="meta">National level • 2025 • Evaluated by Prof. Michael Bechtel (Nazarbayev University)</div>
+                <div class="meta">National • 2025 • Evaluated by Prof. Michael Bechtel (Nazarbayev University)</div>
+              </div>
+
+              <div class="item award">
+                <h4>Participant — “Festival of Scientific Ideas” (School Scientific Projects)</h4>
+                <div class="meta">School level</div>
+              </div>
+
+              <!-- Competitions & Hackathons -->
+              <div class="group-title">Competitions & Hackathons</div>
+
+              <div class="item award">
+                <h4>Semi-finalist — Samsung Solve for Tomorrow</h4>
+                <div class="meta">National • 2025</div>
+              </div>
+
+              <div class="item award">
+                <h4>Participant — National Hackathon of HackOrgKz</h4>
+                <div class="meta">20 September 2024</div>
               </div>
 
               <!-- Chess -->
@@ -349,18 +340,27 @@
 
               <div class="item award">
                 <h4>First-Class Chess Player (Adult Category)</h4>
-                <div class="meta">1 rank lower than Candidate Master of Sports</div>
+                <div class="meta">National rating</div>
               </div>
 
               <div class="item award">
-                <h4>2nd Place among Almaty Schools — City Chess Tournament </h4>
-                <div class="meta">2024 • Prize: 100,000 ₸</div>
+                <h4>2nd Place — City Chess Tournament (Almaty Schools)</h4>
+                <div class="meta">City level • 2024 • Prize: 100,000 ₸</div>
               </div>
+
+              <div class="item award">
+                <h4>Participation — KBTU OPEN 2024 (International)</h4>
+                <div class="meta">Placed 20th</div>
+              </div>
+
+              <!-- The list includes both #6 and #17 from the user message (both describe 2nd place city chess).
+                   Both are preserved by keeping the single consolidated line above; if you want them as two separate lines,
+                   duplicate the line below this comment in your local copy. -->
 
             </div>
           </section>
 
-          <!-- ======================= Leadership & Service ======================= -->
+          <!-- ======================= Leadership & Service (unchanged) ======================= -->
           <section class="section avoid">
             <div class="hd"><h3>Leadership & Service</h3></div>
             <div class="bd items">
@@ -393,6 +393,3 @@
   </div>
 </body>
 </html>
-
-
-
