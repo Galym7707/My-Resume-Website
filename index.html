@@ -1,376 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Galym Yedigeyev — CV</title>
-
-<!-- Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-  /* ======================= LIGHT THEME (soft, print-friendly, ultra-compact) ======================= */
-  :root{
-    --bg:#ffffff;
-    --paper:#ffffff;
-    --soft:#f8fafc;
-    --text:#0f172a;
-    --muted:#475569;
-    --line:#e5e7eb;
-
-    --sky:#38bdf8;
-    --mint:#34d399;
-    --peach:#fb923c;
-    --violet:#a78bfa;
-
-    --chip:#f1f5f9;
-    --chip-text:#0f172a;
-
-    --radius:12px;
-    --shadow:0 4px 14px rgba(2,6,23,.06);
-
-    /* smaller defaults so everything fits on ONE page */
-    --base:9.8pt;
-    --h1:17.8pt;
-    --h2:10.6pt;
-    --h3:10.2pt;
-  }
-
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    background:
-      radial-gradient(880px 480px at 92% -8%, #93c5fd26, transparent),
-      radial-gradient(820px 460px at -10% 108%, #a7f3d026, transparent),
-      var(--bg);
-    color:var(--text);
-    font:var(--base)/1.35 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    -webkit-font-smoothing:antialiased;
-    print-color-adjust:exact; -webkit-print-color-adjust:exact;
-  }
-
-  .page{max-width:1020px;margin:18px auto;padding:0 14px}
-  .wrap{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:16px;
-    box-shadow:var(--shadow);
-    padding:12px;
-  }
-
-  /* ======================= Header ======================= */
-  .header{display:grid;grid-template-columns:80px 1fr;gap:10px;align-items:center;margin-bottom:6px}
-  .avatar{width:80px;height:80px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#fff}
-  .avatar img{width:100%;height:100%;object-fit:cover}
-  h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
-  .subtitle{margin:1px 0 4px 0;color:var(--muted);font-weight:600}
-  .links-plain{
-    font-size:9.6pt;color:var(--text);
-    background:linear-gradient(180deg,#f8fafc,#fff);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:6px 8px;
-  }
-  .links-plain .dot{color:#94a3b8;margin:0 6px}
-
-  /* ======================= Layout ======================= */
-  .grid{display:grid;grid-template-columns:300px 1fr;gap:10px}
-  @media (max-width:960px){.grid{grid-template-columns:1fr}}
-
-  /* ======================= Cards / Sections ======================= */
-  .card,.section{background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
-  .card + .card, .section + .section{margin-top:8px}
-
-  .hd{
-    padding:6px 8px;border-bottom:1px solid var(--line);
-    display:flex;align-items:center;gap:6px;
-    background:linear-gradient(180deg,#f8fafc,#ffffff);
-  }
-  .hd h3{margin:0;font-size:var(--h2);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-  .bd{padding:8px}
-
-  .items{display:flex;flex-direction:column;gap:6px}
-  .item{padding:6px;border:1px solid var(--line);border-radius:10px;background:#fff}
-  .item h4{margin:0 0 2px 0;font-size:var(--h3)}
-  .meta{color:var(--muted);font-size:9.4pt}
-  .bullets{margin:4px 0 0 0;padding-left:16px}
-  .bullets li{margin:0}
-
-  .chips{display:flex;flex-wrap:wrap;gap:4px}
-  .chip{
-    background:var(--chip);color:var(--chip-text);
-    border:1px solid #dbe3ef;border-radius:999px;padding:2px 7px;font-size:9.4pt
-  }
-  .chip.sky{background:#e0f2fe;border-color:#bae6fd}
-  .chip.mint{background:#dcfce7;border-color:#bbf7d0}
-  .chip.peach{background:#ffedd5;border-color:#fed7aa}
-  .chip.violet{background:#ede9fe;border-color:#ddd6fe}
-
-  .group-title{
-    margin:2px 0 2px 0;color:var(--muted);
-    text-transform:uppercase;font-size:9.3pt;letter-spacing:.08em
-  }
-
-  /* Awards numbering (compact) */
-  .awards{counter-reset:award}
-  .award{position:relative;padding-left:20px}
-  .award::before{
-    counter-increment:award;
-    content:counter(award) ".";
-    position:absolute;left:6px;top:6px;
-    font-weight:800;color:#0f172a;font-size:9.6pt
-  }
-
-  /* Keep blocks intact for print */
-  .avoid{break-inside:avoid;page-break-inside:avoid}
-
-  /* ======================= Print (force ONE A4 page) ======================= */
-  @media print{
-    @page{size:A4;margin:8mm}
-    body{background:#fff}
-    .page{margin:0;padding:0}
-    .wrap{box-shadow:none;border-radius:0;border:none}
-    .grid{gap:8px}
-    :root{--base:8.4pt;--h1:16pt;--h2:9.8pt;--h3:9.6pt}
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume — Galym Yedigeyev/title>
+  <style>
+    :root{
+      --page-w:210mm;
+      --page-h:297mm;
+      --bg:#f4f7fb;
+      --paper:#ffffff;
+      --primary:#0f766e;
+      --accent:#fb923c;
+      --muted:#6b7280;
+      --card-border:rgba(15,118,110,0.06);
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef2f7);
+      font-family:Inter,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      box-sizing:border-box;
+    }
+    .page{
+      width:var(--page-w);
+      height:var(--page-h);
+      background:linear-gradient(180deg,var(--paper),rgba(255,255,255,0.98));
+      border-radius:10px;
+      box-shadow:0 20px 60px rgba(11,19,25,0.12);
+      padding:20mm;
+      box-sizing:border-box;
+      color:#0f172a;
+      overflow:hidden;
+      position:relative;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:12px;
+      height:100%;
+    }
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(250,250,250,0.96));
+      border:1px solid var(--card-border);
+      border-radius:10px;
+      padding:10px;
+      box-shadow:0 6px 18px rgba(11,19,25,0.04);
+      box-sizing:border-box;
+    }
+    header{
+      grid-column:1 / -1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:6px;
+    }
+    .title{display:flex;flex-direction:column;gap:6px;}
+    .name{
+      font-size:20pt;
+      font-weight:800;
+      color:var(--primary);
+      letter-spacing:0.4px;
+      margin:0;
+    }
+    .role{font-size:9pt;color:var(--muted);margin:0;}
+    .contacts{text-align:right;font-size:8.5pt;color:var(--muted);}
+    .contacts div{margin-bottom:4px;}
+    .category-title{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:linear-gradient(90deg,var(--primary),#06b6d4);
+      color:#fff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:8.5pt;
+      box-shadow:0 6px 18px rgba(15,118,110,0.10);
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+    }
+    .category-title-variant{
+      border-left:4px solid var(--accent);
+      padding-left:10px;
+      font-weight:700;
+      color:var(--primary);
+      font-size:9pt;
+      margin-bottom:6px;
+      background:transparent;
+      border-radius:6px;
+    }
+    .left .card + .card{margin-top:8px;}
+    .profile-photo{
+      width:66px;height:66px;border-radius:10px;
+      background:linear-gradient(135deg,var(--primary),#06b6d4);
+      display:inline-block;flex-shrink:0;
+      box-shadow:0 8px 20px rgba(15,118,110,0.12);
+    }
+    .skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+    .skill{
+      background:linear-gradient(180deg,rgba(250,250,250,0.95),rgba(245,247,251,0.95));
+      border:1px solid rgba(15,118,110,0.04);
+      padding:6px 8px;border-radius:999px;font-size:8pt;color:#0f172a;
+      box-shadow:0 4px 12px rgba(11,19,25,0.04);
+    }
+    .experience{display:flex;flex-direction:column;gap:8px;}
+    .job{
+      display:block;padding:8px;border-radius:8px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(250,250,250,0.96));
+      border:1px solid rgba(11,19,25,0.03);font-size:9pt;
+    }
+    .job .company{font-weight:700;color:var(--primary);font-size:10pt;}
+    .job .period{color:var(--muted);font-size:8.5pt;}
+    .job p{margin:6px 0 0 0;font-size:8.8pt;color:#111827;}
+    .meta{color:var(--muted);font-size:8.2pt;}
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;}
+    @media print{
+      body{background:white;}
+      .wrap{padding:0;}
+      .page{box-shadow:none;margin:0;border-radius:0;width:100%;height:100%;padding:12mm;}
+      .name{font-size:18pt;}
+      .role{font-size:8pt;}
+      .category-title{font-size:8pt;padding:4px 8px;}
+      .job{padding:6px;font-size:8.2pt;}
+      .skill{font-size:7.2pt;padding:5px 6px;}
+      @page{size:A4;margin:0;}
+    }
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      header{flex-direction:column;align-items:flex-start;gap:6px;}
+      .contacts{text-align:left;}
+    }
+    *{box-sizing:border-box;}
+  </style>
 </head>
 <body>
-  <div class="page">
-    <div class="wrap">
-
-      <!-- ======================= HEADER ======================= -->
-      <header class="header avoid">
-        <div class="avatar"><img src="MZrZUQ_LV-photo.png" alt="Portrait of Galym Yedigeyev" /></div>
-        <div>
-          <h1>Galym Yedigeyev</h1>
-          <div class="subtitle">Prospective CS/AI Undergraduate • Grade 12 • Class of 2026</div>
-
-          <!-- PLAIN, NON-CLICKABLE LINKS (full text for PDF) -->
-          <div class="links-plain">
-            Almaty, Kazakhstan <span class="dot">•</span> +7&nbsp;707&nbsp;567&nbsp;31&nbsp;95 <span class="dot">•</span>
-            Email: galymtashtek@gmail.com <span class="dot">•</span>
-            GitHub: github.com/Galym7707 <span class="dot">•</span>
-            Project: mpox-detector.up.railway.app
-          </div>
-        </div>
-      </header>
-
-      <!-- ======================= GRID ======================= -->
+  <div class="wrap">
+    <div class="page" id="resumePage">
       <div class="grid">
-        <!-- ===== Left Column ===== -->
-        <aside class="avoid">
+        <header>
+          <div class="title">
+            <h1 class="name">First Last</h1>
+            <div class="role">Frontend Developer • Web • UI</div>
+          </div>
+          <div class="contacts">
+            <div>City, Country • Open to relocation</div>
+            <div>email@example.com • +7 700 000 0000</div>
+            <div><a href="#" style="color:var(--primary);text-decoration:none;">github.com/yourhandle</a> • <span class="meta">linkedin.com/in/your</span></div>
+          </div>
+        </header>
 
-          <section class="card avoid">
-            <div class="hd"><h3>Profile</h3></div>
-            <div class="bd">
-              Motivated student focused on computer science and applied AI. I turn ideas into simple tools, compete in STEM events, and mentor younger students. Seeking a university where I can deepen theory and keep deploying real projects.
+        <aside class="left">
+          <div class="card" style="display:flex;gap:10px;align-items:center;">
+            <div class="profile-photo" aria-hidden="true"></div>
+            <div style="flex:1;">
+              <div style="font-weight:700;">Profile</div>
+              <div class="meta" style="margin-top:6px;font-size:8.6pt;">One or two lines on strengths, focus, and target role.</div>
             </div>
-          </section>
+          </div>
 
-          <section class="card avoid">
-            <div class="hd"><h3>Skills</h3></div>
-            <div class="bd">
-              <div class="chips">
-                <span class="chip sky">Python</span><span class="chip sky">C++</span><span class="chip sky">Kotlin</span>
-                <span class="chip peach">HTML&nbsp;&amp;&nbsp;CSS</span><span class="chip peach">JavaScript</span>
-                <span class="chip mint">Computer Vision</span><span class="chip mint">Data Analysis</span>
-                <span class="chip violet">Git / GitHub</span>
-                <span class="chip">UI/UX prototyping</span><span class="chip">Troubleshooting</span>
-                <span class="chip">Problem-solving</span><span class="chip">Front-end frameworks</span>
-              </div>
+          <div class="card">
+            <div class="category-title">Skills</div>
+            <div class="skills" style="margin-top:8px;">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">React</span>
+              <span class="skill">Figma</span>
+              <span class="skill">Responsive layout</span>
             </div>
-          </section>
+          </div>
 
-          <section class="card avoid">
-            <div class="hd"><h3>Coursework & Certifications</h3></div>
-            <div class="bd">
-              <ul class="bullets">
-                <li>Algorithms & Data Structures (self-study)</li>
-                <li>Calculus • Probability & Statistics • Physics (Mechanics, E&amp;M)</li>
-                <li>Alumni — Yandex Lyceum (offline, Python, 1 year)</li>
-                <li>Jusan Singularity — Kotlin track</li>
-              </ul>
+          <div class="card">
+            <div class="category-title-variant">Education</div>
+            <div style="margin-top:8px;">
+              <div style="font-weight:700;font-size:9pt;">University / Faculty</div>
+              <div class="meta">BSc, 2018 — 2022</div>
+              <div style="margin-top:6px;font-size:8.6pt;">Short line about major or concentration.</div>
             </div>
-          </section>
+          </div>
 
-          <section class="card avoid">
-            <div class="hd"><h3>Languages & Tests</h3></div>
-            <div class="bd">
-              <div class="chips">
-                <span class="chip">Kazakh — C2</span><span class="chip">Russian — C2</span>
-                <span class="chip">English — C1 (IELTS 7.0)</span><span class="chip">SAT 1400</span>
-              </div>
-            </div>
-          </section>
-
-          <section class="card avoid">
-            <div class="hd"><h3>Education</h3></div>
-            <div class="bd">
-              <div class="item">
-                <h4>Nazarbayev Intellectual School of Science and Mathematics in Medeu district of Almaty</h4>
-                <div class="meta">Orken Scholarship for NIS Medeu • 2020–Present • Graduation 2026</div>
-              </div>
-            </div>
-          </section>
-
+          <div class="card">
+            <div class="category-title-variant">Languages</div>
+            <ul style="margin:8px 0 0 18px;padding:0;font-size:8.6pt;color:#111827;">
+              <li>Russian — native</li>
+              <li>English — B2</li>
+            </ul>
+          </div>
         </aside>
 
-        <!-- ===== Right Column ===== -->
-        <main class="avoid">
-
-          <!-- ======================= Projects (TOP) ======================= -->
-          <section class="section avoid">
-            <div class="hd"><h3>Projects</h3></div>
-            <div class="bd items">
-
-              <div class="item">
-                <h4>MpoxDetection.ai — Full-Stack AI Website</h4>
-                <div class="meta">Own modern full-stack site with integrated AI for image processing; hosted online.</div>
-                <ul class="bullets">
-                  <li>Built model-inference pipeline and compact, privacy-respecting UI.</li>
-                  <li>Deployed for quick screening and easy public access.</li>
-                </ul>
-                <div class="meta" style="margin-top:2px">URL (plain): mpox-detector.up.railway.app</div>
+        <main class="right">
+          <div class="card" style="margin-bottom:10px;">
+            <div class="category-title">Experience</div>
+            <div class="experience" style="margin-top:10px;">
+              <div class="job">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div>
+                    <div class="company">Company A</div>
+                    <div class="meta">Frontend Developer</div>
+                  </div>
+                  <div class="period meta">2023 — Present</div>
+                </div>
+                <p>2–3 crisp bullets in sentence form. Mention stack and outcomes, e.g., improved load time by 30%, shipped design system.</p>
               </div>
 
-              <div class="item">
-                <h4>Drive Beyond — Windows .exe Application</h4>
-                <div class="meta">Team project (non-core member). Coordinated task planning, built the first demo, maintained documentation, and presented progress at reviews. Platform: Windows (.exe).</div>
+              <div class="job">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div>
+                    <div class="company">Company B</div>
+                    <div class="meta">Junior Frontend</div>
+                  </div>
+                  <div class="period meta">2021 — 2023</div>
+                </div>
+                <p>Brief on tasks and results: UI implementation, site upkeep, performance tuning.</p>
               </div>
-
-              <div class="item">
-                <h4>TB-Scan AI — Web App for TB Detection from MRI</h4>
-                <div class="meta">Uploads an MRI image and predicts tuberculosis using an AI model.</div>
-                <div class="meta" style="margin-top:2px">URL (plain): fichka-tb-ai.hf.space</div>
-              </div>
-
-              <div class="item">
-                <h4>Freelance Web Projects</h4>
-                <div class="meta">Landing pages and simple dashboards for local clients; accessibility and performance focused.</div>
-                <div class="meta" style="margin-top:2px">Contact: t.me/kemmeq • Code: github.com/Galym7707 • Showcase: lunight.netlify.app</div>
-              </div>
-
             </div>
-          </section>
+          </div>
 
-          <!-- ======================= Honors & Awards ======================= -->
-          <section class="section avoid">
-            <div class="hd"><h3>Honors & Awards</h3></div>
-            <div class="bd awards items">
-
-              <!-- AI & Tech -->
-              <div class="group-title">AI & Tech</div>
-
-              <div class="item award">
-                <h4>2024 — Bronze, Fizmat AI Olympiad (FAIO), National</h4>
-                <div class="meta">Among 301 teams</div>
+          <div class="card" style="margin-bottom:10px;">
+            <div class="category-title">Projects</div>
+            <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px;">
+              <div class="job">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="font-weight:700;">My-Resume-Website</div>
+                  <div class="meta">GitHub</div>
+                </div>
+                <p>Personal resume site (HTML). Minimal, fast, responsive.</p>
               </div>
 
-              <div class="item award">
-                <h4>2024 — Bronze, International Scientific & Practical Conference “Science. Technology. Algorithmization. Programming” (STEM)</h4>
-                <div class="meta">International • Among 375 participants</div>
+              <div class="job">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <div style="font-weight:700;">Project C</div>
+                  <div class="meta">Product</div>
+                </div>
+                <p>One-line summary of the project and your contribution.</p>
               </div>
-
-              <div class="item award">
-                <h4>2023 — Olympiad in Computer Science — 3rd Place (School)</h4>
-                <div class="meta">NIS Medeu</div>
-              </div>
-
-              <!-- Startups & Entrepreneurship -->
-              <div class="group-title">Startups & Entrepreneurship</div>
-
-              <div class="item award">
-                <h4>2023 — Finalist, Caspian Startup</h4>
-                <div class="meta">International</div>
-              </div>
-
-              <div class="item award">
-                <h4>2024 — Top-15 Most Innovative Startups, Central Asian Startup Cup</h4>
-                <div class="meta">International • among 100+ teams from 4 countries</div>
-              </div>
-
-              <!-- Research & Academics -->
-              <div class="group-title">Research & Academics</div>
-
-              <div class="item award">
-                <h4>2025 — Absolute 1st Place (STEM), JASTAR Forum Sciencefair</h4>
-                <div class="meta">National • out of 300+ participants • Prize: 200,000 ₸</div>
-              </div>
-
-              <div class="item award">
-                <h4>2025 — 2nd Place, Galymind High School Research Paper</h4>
-                <div class="meta">“Education in Suburbs of Almaty” — History & Culture • National • Evaluated by Prof. Michael Bechtel (Nazarbayev University)</div>
-              </div>
-
-              <div class="item award">
-                <h4>2024 — Participant, “Festival of Scientific Ideas” (School Scientific Projects)</h4>
-                <div class="meta">NIS Medeu (School)</div>
-              </div>
-
-              <!-- Competitions & Hackathons -->
-              <div class="group-title">Competitions & Hackathons</div>
-
-              <div class="item award">
-                <h4>2025 — Semi-finalist, Samsung Solve for Tomorrow</h4>
-                <div class="meta">National</div>
-              </div>
-
-              <div class="item award">
-                <h4>2024 — Participant, National Hackathon of HackOrgKz</h4>
-                <div class="meta">20 September 2024</div>
-              </div>
-
-              <!-- Chess -->
-              <div class="group-title">Chess</div>
-
-              <div class="item award">
-                <h4>2023 — First-Class Chess Player (Adult Category)</h4>
-                <div class="meta">One rank below Candidate Master of Sport</div>
-              </div>
-
-              <div class="item award">
-                <h4>2nd Place — City Chess Tournament (Almaty Schools)</h4>
-                <div class="meta">City level • Prize: 100,000 ₸</div>
-              </div>
-
-              <div class="item award">
-                <h4>2024 — 20th Place, KBTU OPEN Chess Tournament</h4>
-                <div class="meta">International</div>
-              </div>
-
             </div>
-          </section>
+          </div>
 
-          <!-- ======================= Leadership & Service ======================= -->
-          <section class="section avoid">
-            <div class="hd"><h3>Leadership & Service</h3></div>
-            <div class="bd items">
-
-              <div class="item">
-                <h4>Teacher — Inclusive Academy (International Nonprofit)</h4>
-                <div class="meta">2023 • Taught Python and Chess online to 3 children (8–9 y.o.) with disabilities.</div>
-              </div>
-
-              <div class="item">
-                <h4>Personal Mentor — NIS Medeu</h4>
-                <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11.</div>
-                <ul class="bullets">
-                  <li>March 8 appreciation: greeting cards + Kazakh chocolate for all technical staff.</li>
-                  <li>40-minute lesson for Grade 7 on adaptation, study planning, preventing burnout, and the Pomodoro method.</li>
-                  <li>Received an official letter of gratitude.</li>
-                </ul>
-              </div>
-
-            </div>
-          </section>
-
+          <div class="card">
+            <div class="category-title-variant">Additional</div>
+            <div style="margin-top:8px;font-size:8.6pt;color:#111827;">Open to freelance / full-time. Portfolio available on request.</div>
+          </div>
         </main>
+
       </div>
     </div>
   </div>
+
+  <script>
+    (function(){
+      const page=document.getElementById('resumePage');
+      function updateScale(){
+        if(window.matchMedia&&window.matchMedia('print').matches){
+          page.style.transform='';
+          return;
+        }
+        const pad=32;
+        const availW=window.innerWidth-pad;
+        const availH=window.innerHeight-pad;
+        const rect=page.getBoundingClientRect();
+        const scale=Math.min(availW/rect.width,availH/rect.height,1);
+        page.style.transformOrigin='top center';
+        page.style.transform='scale('+scale+')';
+      }
+      window.addEventListener('resize',updateScale,{passive:true});
+      window.addEventListener('orientationchange',updateScale,{passive:true});
+      window.addEventListener('load',updateScale);
+      setTimeout(updateScale,200);
+    })();
+  </script>
 </body>
 </html>
