@@ -3,20 +3,23 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Galym Yedigeyev — CV</title>
+<title>Galym Yedigeyev CV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff; --paper:#ffffff; --soft:#f8fafc; --text:#0f172a; --muted:#475569; --line:#e5e7eb;
-  --blue:#2563eb; --blue-t:#e0f2fe;
-  --green:#10b981; --green-t:#dcfce7;
+  --blue:#2563eb; --blue-t:#dbeafe;
+  --green:#10b981; --green-t:#d1fae5;
   --orange:#f97316; --orange-t:#ffedd5;
   --violet:#7c3aed; --violet-t:#ede9fe;
-  --chip:#f1f5f9; --chip-text:#0f172a;
+  --chip:#eef2f7; --chip-text:#0f172a;
   --radius:12px; --shadow:0 4px 14px rgba(2,6,23,.06);
-  --base:9.6pt; --h1:18pt; --h2:11pt; --h3:10.2pt;
+  --base:clamp(9px, .9vw, 12px);
+  --h1:clamp(18px, 2vw, 24px);
+  --h2:clamp(11px, 1.2vw, 14px);
+  --h3:clamp(10px, 1.05vw, 13px);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -28,34 +31,31 @@ body{
   color:var(--text);
   font:var(--base)/1.34 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   -webkit-font-smoothing:antialiased; print-color-adjust:exact; -webkit-print-color-adjust:exact;
+  overflow:hidden;
 }
-.page{max-width:1000px;margin:16px auto;padding:0 12px}
-.wrap{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:12px}
-.header{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:center;margin-bottom:6px}
-.avatar{width:78px;height:78px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#fff}
+.page{max-width:1100px;height:100vh;margin:0 auto;padding:8px 10px}
+.wrap{height:100%;display:grid;grid-template-rows:auto 1fr;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:10px}
+.header{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:center}
+.avatar{width:76px;height:76px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#fff}
 .avatar img{width:100%;height:100%;object-fit:cover}
 h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
-.subtitle{margin:1px 0 4px 0;color:var(--muted);font-weight:600}
-.links-plain{font-size:9.4pt;color:var(--text);background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid var(--line);border-radius:10px;padding:6px 8px}
+.subtitle{margin:2px 0 4px 0;color:var(--muted);font-weight:600}
+.links-plain{font-size:12px;color:var(--text);background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid var(--line);border-radius:10px;padding:6px 8px}
 .links-plain .dot{color:#94a3b8;margin:0 6px}
-.grid{display:grid;grid-template-columns:292px 1fr;gap:9px}
-.card,.section{background:#fff;border:1px solid var(--line);border-radius:12px}
-.card+.card,.section+.section{margin-top:8px}
+.main{min-height:0;display:grid;grid-template-columns:290px 1fr 1fr;gap:10px;margin-top:8px}
+.section,.card{background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-height:0}
 .hd{padding:6px 8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
-.hd h3{margin:0;font-size:var(--h2);text-transform:uppercase;letter-spacing:.09em}
-.bd{padding:8px}
+.hd h3{margin:0;font-size:var(--h2);text-transform:uppercase;letter-spacing:.1em}
+.bd{padding:8px;overflow:hidden}
 .items{display:flex;flex-direction:column;gap:6px}
 .item{padding:6px;border:1px solid var(--line);border-radius:10px;background:#fff}
 .item h4{margin:0 0 2px 0;font-size:var(--h3)}
-.meta{color:var(--muted);font-size:9.1pt}
-.bullets{margin:4px 0 0 14px;padding-left:10px}
+.meta{color:var(--muted);font-size:12px}
+.bullets{margin:4px 0 0 12px;padding-left:10px}
 .bullets li{margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:4px}
-.chip{background:var(--chip);color:var(--chip-text);border:1px solid #dbe3ef;border-radius:999px;padding:2px 7px;font-size:9.1pt}
-.group-title{margin:2px 0;color:var(--muted);text-transform:uppercase;font-size:9.1pt;letter-spacing:.08em}
-.awards{counter-reset:award}
-.award{position:relative;padding-left:18px}
-.award::before{counter-increment:award;content:counter(award) ".";position:absolute;left:6px;top:6px;font-weight:800;color:#0f172a;font-size:9.3pt}
+.chip{background:var(--chip);color:var(--chip-text);border:1px solid #dbe3ef;border-radius:999px;padding:2px 7px;font-size:12px}
+.group-title{margin:2px 0;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.08em}
 .section.blue .hd{background:linear-gradient(180deg,var(--blue-t),#fff);border-left:6px solid var(--blue)}
 .section.blue .hd h3{color:var(--blue)}
 .section.orange .hd{background:linear-gradient(180deg,var(--orange-t),#fff);border-left:6px solid var(--orange)}
@@ -64,26 +64,24 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
 .section.green .hd h3{color:var(--green)}
 .card.violet .hd{background:linear-gradient(180deg,var(--violet-t),#fff);border-left:6px solid var(--violet)}
 .card.violet .hd h3{color:var(--violet)}
-.card.sky .hd{background:linear-gradient(180deg,var(--blue-t),#fff);border-left:6px solid var(--blue)}
-.card.sky .hd h3{color:var(--blue)}
-.card.green .hd{background:linear-gradient(180deg,var(--green-t),#fff);border-left:6px solid var(--green)}
-.card.orange .hd{background:linear-gradient(180deg,var(--orange-t),#fff);border-left:6px solid var(--orange)}
-.avoid{break-inside:avoid;page-break-inside:avoid}
+.scroll{overflow:auto}
+.grid-awards{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.aw{padding:6px;border:1px dashed #d8dee9;border-radius:10px}
+.fit{display:flex;flex-direction:column;gap:10px;min-height:0}
 @media print{
   @page{size:A4;margin:8mm}
-  body{background:#fff}
-  .page{margin:0;padding:0}
-  .wrap{box-shadow:none;border-radius:0;border:none}
-  .grid{gap:7px}
-  :root{--base:8.2pt;--h1:16pt;--h2:9.6pt;--h3:9.2pt}
+  body{overflow:visible}
+  .page{height:auto}
+  .main{grid-template-columns:290px 1fr 1fr}
+  :root{--base:10px;--h1:20px;--h2:12px;--h3:11px}
 }
 </style>
 </head>
 <body>
   <div class="page">
     <div class="wrap">
-      <header class="header avoid">
-        <div class="avatar"><img src="MZrZUQ_LV-photo.png" alt="Portrait of Galym Yedigeyev" /></div>
+      <div class="header">
+        <div class="avatar"><img src="MZrZUQ_LV-photo.png" alt="Galym Yedigeyev" /></div>
         <div>
           <h1>Galym Yedigeyev</h1>
           <div class="subtitle">Prospective CS/AI Undergraduate • Grade 12 • Class of 2026</div>
@@ -94,18 +92,18 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             Project: mpox-detector.up.railway.app
           </div>
         </div>
-      </header>
+      </div>
 
-      <div class="grid">
-        <aside class="avoid">
-          <section class="card violet avoid">
+      <div class="main">
+        <div class="fit">
+          <section class="card violet scroll">
             <div class="hd"><h3>Profile</h3></div>
             <div class="bd">
               Motivated student focused on computer science and applied AI. I build useful tools, compete in STEM events, and mentor younger students. Seeking a university where I can deepen theory and keep deploying real projects.
             </div>
           </section>
 
-          <section class="card sky avoid">
+          <section class="card scroll">
             <div class="hd"><h3>Skills</h3></div>
             <div class="bd">
               <div class="chips">
@@ -118,7 +116,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
           </section>
 
-          <section class="card green avoid">
+          <section class="card green scroll">
             <div class="hd"><h3>Coursework & Certifications</h3></div>
             <div class="bd">
               <ul class="bullets">
@@ -130,7 +128,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
           </section>
 
-          <section class="card orange avoid">
+          <section class="card orange scroll">
             <div class="hd"><h3>Languages & Tests</h3></div>
             <div class="bd">
               <div class="chips">
@@ -140,7 +138,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
           </section>
 
-          <section class="card violet avoid">
+          <section class="card violet scroll">
             <div class="hd"><h3>Education</h3></div>
             <div class="bd">
               <div class="item">
@@ -149,83 +147,77 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
               </div>
             </div>
           </section>
-        </aside>
+        </div>
 
-        <main class="avoid">
-          <section class="section blue avoid">
-            <div class="hd"><h3>Projects</h3></div>
-            <div class="bd items">
-              <div class="item">
-                <h4>MpoxDetection.ai — Full-Stack AI Website</h4>
-                <div class="meta">Modern full-stack site with integrated AI for image processing; public deployment.</div>
-                <ul class="bullets">
-                  <li>Model-inference pipeline and compact, privacy-respecting UI</li>
-                  <li>Quick screening for common rash diseases</li>
-                </ul>
-                <div class="meta">URL: mpox-detector.up.railway.app</div>
-              </div>
-
-              <div class="item">
-                <h4>Drive Beyond — Windows .exe Application</h4>
-                <div class="meta">Team project (non-core member): coordinated task planning, built the first demo, maintained documentation, presented progress at reviews.</div>
-              </div>
-
-              <div class="item">
-                <h4>TB-Scan AI — Web App for Tuberculosis Detection from MRI</h4>
-                <div class="meta">Uploads an MRI image and predicts tuberculosis using an AI model.</div>
-                <div class="meta">URL: fichka-tb-ai.hf.space</div>
-              </div>
-
-              <div class="item">
-                <h4>Freelance Web Projects</h4>
-                <div class="meta">Landing pages and simple dashboards for local clients; accessibility and performance focused.</div>
-                <div class="meta">Contact: t.me/kemmeq • Code: github.com/Galym7707 • Showcase: lunight.netlify.app</div>
-              </div>
+        <section class="section blue scroll">
+          <div class="hd"><h3>Projects</h3></div>
+          <div class="bd items">
+            <div class="item">
+              <h4>MpoxDetection.ai — Full-Stack AI Website</h4>
+              <div class="meta">Modern full-stack site with integrated AI for image processing; public deployment.</div>
+              <ul class="bullets">
+                <li>Model-inference pipeline and compact, privacy-respecting UI</li>
+                <li>Quick screening for common rash diseases</li>
+              </ul>
+              <div class="meta">URL: mpox-detector.up.railway.app</div>
             </div>
-          </section>
+            <div class="item">
+              <h4>Drive Beyond — Windows .exe Application</h4>
+              <div class="meta">Team project (non-core member): coordinated task planning, built the first demo, maintained documentation, presented progress at reviews.</div>
+            </div>
+            <div class="item">
+              <h4>TB-Scan AI — Web App for Tuberculosis Detection from MRI</h4>
+              <div class="meta">Uploads an MRI image and predicts tuberculosis using an AI model.</div>
+              <div class="meta">URL: fichka-tb-ai.hf.space</div>
+            </div>
+            <div class="item">
+              <h4>Freelance Web Projects</h4>
+              <div class="meta">Landing pages and dashboards for local clients; accessibility and performance focused.</div>
+              <div class="meta">Contact: t.me/kemmeq • Code: github.com/Galym7707 • Showcase: lunight.netlify.app</div>
+            </div>
+          </div>
+        </section>
 
-          <section class="section orange avoid">
-            <div class="hd"><h3>Honors & Awards</h3></div>
-            <div class="bd awards items">
+        <section class="section orange scroll">
+          <div class="hd"><h3>Honors & Awards</h3></div>
+          <div class="bd grid-awards">
+            <div class="aw">
               <div class="group-title">AI & Tech</div>
-              <div class="item award"><h4>2024 — Bronze, Fizmat AI Olympiad (FAIO), National</h4><div class="meta">Among 301 teams</div></div>
-              <div class="item award"><h4>2024 — Bronze, International Scientific & Practical Conference “Science. Technology. Algorithmization. Programming” (STEM)</h4><div class="meta">International • Among 375 participants</div></div>
-              <div class="item award"><h4>2023 — Olympiad in Computer Science — 3rd Place (School)</h4><div class="meta">NIS Medeu</div></div>
-
-              <div class="group-title">Startups & Entrepreneurship</div>
-              <div class="item award"><h4>2023 — Finalist, Caspian Startup</h4><div class="meta">International</div></div>
-              <div class="item award"><h4>2024 — Top-15 Most Innovative Startups, Central Asian Startup Cup</h4><div class="meta">International • 100+ teams from 4 countries</div></div>
-
-              <div class="group-title">Research & Academics</div>
-              <div class="item award"><h4>2025 — Absolute 1st Place (STEM), JASTAR Forum Sciencefair</h4><div class="meta">National • 300+ participants • Prize: 200,000 ₸</div></div>
-              <div class="item award"><h4>2025 — 2nd Place, Galymind High School Research Paper</h4><div class="meta">“Education in Suburbs of Almaty” — History & Culture • National • Evaluated by Prof. Michael Bechtel (Nazarbayev University)</div></div>
-              <div class="item award"><h4>2024 — Participant, “Festival of Scientific Ideas”</h4><div class="meta">School Scientific Projects • NIS Medeu</div></div>
-
-              <div class="group-title">Competitions & Hackathons</div>
-              <div class="item award"><h4>2025 — Semi-finalist, Samsung Solve for Tomorrow</h4><div class="meta">National</div></div>
-              <div class="item award"><h4>2024 — Participant, National Hackathon of HackOrgKz</h4><div class="meta">20 September 2024</div></div>
-
-              <div class="group-title">Chess</div>
-              <div class="item award"><h4>2023 — First-Class Chess Player (Adult Category)</h4><div class="meta">One rank below Candidate Master of Sport</div></div>
-              <div class="item award"><h4>2nd Place — City Chess Tournament (Almaty Schools)</h4><div class="meta">City level • Prize: 100,000 ₸</div></div>
-              <div class="item award"><h4>2024 — 20th Place, KBTU OPEN Chess Tournament</h4><div class="meta">International</div></div>
+              <div class="meta">2024 — Bronze, Fizmat AI Olympiad (FAIO), National — among 301 teams</div>
+              <div class="meta">2024 — Bronze, “Science. Technology. Algorithmization. Programming” (STEM), International — among 375 participants</div>
+              <div class="meta">2023 — Olympiad in Computer Science — 3rd Place, NIS Medeu (School)</div>
+              <div class="group-title">Startups</div>
+              <div class="meta">2023 — Finalist, Caspian Startup, International</div>
+              <div class="meta">2024 — Top-15 Most Innovative Startups, Central Asian Startup Cup, International — 100+ teams from 4 countries</div>
             </div>
-          </section>
-
-          <section class="section green avoid">
-            <div class="hd"><h3>Leadership & Service</h3></div>
-            <div class="bd items">
-              <div class="item">
-                <h4>Teacher — Inclusive Academy (International Nonprofit)</h4>
-                <div class="meta">2023 • Taught Python and Chess online to 3 children (8–9 y.o.) with disabilities.</div>
-              </div>
-              <div class="item">
-                <h4>Personal Mentor — NIS Medeu</h4>
-                <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11; organized March 8 appreciation (cards + Kazakh chocolate), delivered a 40-minute lesson for Grade 7 on adaptation, study planning, burnout prevention, and the Pomodoro method; received an official letter of gratitude.</div>
-              </div>
+            <div class="aw">
+              <div class="group-title">Research & More</div>
+              <div class="meta">2025 — Absolute 1st, JASTAR Forum Sciencefair (STEM), National — 300+ participants, prize 200,000 ₸</div>
+              <div class="meta">2025 — 2nd, Galymind HS Research Paper “Education in Suburbs of Almaty”, National — eval. by Prof. Michael Bechtel (NU)</div>
+              <div class="meta">2024 — Participant, “Festival of Scientific Ideas”, NIS Medeu (School)</div>
+              <div class="group-title">Competitions & Chess</div>
+              <div class="meta">2025 — Semi-finalist, Samsung Solve for Tomorrow, National</div>
+              <div class="meta">2024 — Participant, National Hackathon of HackOrgKz</div>
+              <div class="meta">2023 — First-Class Chess Player (Adult Category) — one rank below Candidate Master of Sport</div>
+              <div class="meta">2nd Place — City Chess Tournament (Almaty Schools), prize 100,000 ₸</div>
+              <div class="meta">2024 — 20th Place, KBTU OPEN Chess Tournament, International</div>
             </div>
-          </section>
-        </main>
+          </div>
+        </section>
+
+        <section class="section green scroll">
+          <div class="hd"><h3>Leadership & Service</h3></div>
+          <div class="bd items">
+            <div class="item">
+              <h4>Teacher — Inclusive Academy (International Nonprofit)</h4>
+              <div class="meta">2023 • Taught Python and Chess online to 3 children (8–9 y.o.) with disabilities.</div>
+            </div>
+            <div class="item">
+              <h4>Personal Mentor — NIS Medeu</h4>
+              <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11; organized March 8 appreciation (cards + Kazakh chocolate); delivered a 40-minute lesson for Grade 7 on adaptation, study planning, burnout prevention, and the Pomodoro method; received an official letter of gratitude.</div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
