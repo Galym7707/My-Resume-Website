@@ -9,53 +9,48 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; --paper:#ffffff; --soft:#f8fafc; --text:#0f172a; --muted:#475569; --line:#e5e7eb;
+  --bg:#ffffff; --paper:#ffffff; --soft:#f7fafc; --text:#0f172a; --muted:#475569; --line:#e5e7eb;
   --blue:#2563eb; --blue-t:#dbeafe;
   --green:#10b981; --green-t:#d1fae5;
   --orange:#f97316; --orange-t:#ffedd5;
   --violet:#7c3aed; --violet-t:#ede9fe;
   --chip:#eef2f7; --chip-text:#0f172a;
   --radius:12px; --shadow:0 4px 14px rgba(2,6,23,.06);
-  --base:clamp(9px, .9vw, 12px);
-  --h1:clamp(18px, 2vw, 24px);
-  --h2:clamp(11px, 1.2vw, 14px);
-  --h3:clamp(10px, 1.05vw, 13px);
+  --base:11px; --h1:24px; --h2:14px; --h3:13px;
 }
 *{box-sizing:border-box}
-html,body{height:100%}
 body{
-  margin:0;background:
+  margin:0;
+  background:
     radial-gradient(860px 460px at 92% -8%, #93c5fd26, transparent),
     radial-gradient(820px 460px at -10% 108%, #a7f3d026, transparent),
     var(--bg);
   color:var(--text);
-  font:var(--base)/1.34 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font:var(--base)/1.36 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   -webkit-font-smoothing:antialiased; print-color-adjust:exact; -webkit-print-color-adjust:exact;
-  overflow:auto;
 }
-.page{max-width:1100px;height:100svh;height:100dvh;margin:0 auto;padding:8px 10px}
-.wrap{height:100%;display:grid;grid-template-rows:auto 1fr;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:10px}
-.header{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:center}
-.avatar{width:76px;height:76px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#fff}
+.page{max-width:1120px;margin:14px auto;padding:0 12px}
+.wrap{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:12px}
+.header{display:grid;grid-template-columns:82px 1fr;gap:12px;align-items:center}
+.avatar{width:82px;height:82px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#fff}
 .avatar img{width:100%;height:100%;object-fit:cover}
 h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
-.subtitle{margin:2px 0 4px 0;color:var(--muted);font-weight:600}
-.links-plain{font-size:12px;color:var(--text);background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid var(--line);border-radius:10px;padding:6px 8px}
+.subtitle{margin:2px 0 6px 0;color:var(--muted);font-weight:600}
+.links-plain{font-size:12px;color:var(--text);background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid var(--line);border-radius:10px;padding:7px 9px}
 .links-plain .dot{color:#94a3b8;margin:0 6px}
-.main{min-height:0;display:grid;grid-template-columns:290px 1fr 1fr;gap:10px;margin-top:8px}
-.main>*{min-height:0}
-.section,.card{background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-height:0}
-.hd{padding:6px 8px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.main{display:grid;grid-template-columns:320px 1fr 1fr;gap:12px;margin-top:10px}
+.section,.card{background:#fff;border:1px solid var(--line);border-radius:12px}
+.hd{padding:7px 9px;border-bottom:1px solid var(--line);display:flex;align-items:center}
 .hd h3{margin:0;font-size:var(--h2);text-transform:uppercase;letter-spacing:.1em}
-.bd{padding:8px;overflow:hidden}
-.items{display:flex;flex-direction:column;gap:6px}
-.item{padding:6px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.bd{padding:9px}
+.items{display:flex;flex-direction:column;gap:7px}
+.item{padding:7px;border:1px solid var(--line);border-radius:10px;background:#fff}
 .item h4{margin:0 0 2px 0;font-size:var(--h3)}
-.meta{color:var(--muted);font-size:12px}
-.bullets{margin:4px 0 0 12px;padding-left:10px}
+.meta{color:var(--muted)}
+.bullets{margin:4px 0 0 14px;padding-left:8px}
 .bullets li{margin:0}
 .chips{display:flex;flex-wrap:wrap;gap:4px}
-.chip{background:var(--chip);color:var(--chip-text);border:1px solid #dbe3ef;border-radius:999px;padding:2px 7px;font-size:12px}
+.chip{background:var(--chip);color:var(--chip-text);border:1px solid #dbe3ef;border-radius:999px;padding:2px 8px;font-size:11px}
 .group-title{margin:2px 0;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.08em}
 .section.blue .hd{background:linear-gradient(180deg,var(--blue-t),#fff);border-left:6px solid var(--blue)}
 .section.blue .hd h3{color:var(--blue)}
@@ -65,14 +60,20 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
 .section.green .hd h3{color:var(--green)}
 .card.violet .hd{background:linear-gradient(180deg,var(--violet-t),#fff);border-left:6px solid var(--violet)}
 .card.violet .hd h3{color:var(--violet)}
-.scroll{overflow:auto}
-.grid-awards{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.aw{padding:6px;border:1px dashed #d8dee9;border-radius:10px}
-.fit{display:flex;flex-direction:column;gap:10px;min-height:0}
+.grid-awards{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.aw{padding:7px;border:1px dashed #d8dee9;border-radius:10px}
 @media print{
   @page{size:A4;margin:8mm}
-  .page{height:auto}
-  :root{--base:10px;--h1:20px;--h2:12px;--h3:11px}
+  .page{max-width:100%;margin:0;padding:0}
+  .wrap{border:none;box-shadow:none;border-radius:0}
+  :root{--base:8.5pt;--h1:16pt;--h2:10pt;--h3:9.6pt}
+  .links-plain{font-size:9pt;padding:5px 7px}
+  .chip{font-size:8.6pt;padding:1px 6px}
+  .hd{padding:5px 6px}
+  .bd{padding:6px}
+  .item{padding:5px}
+  .main{gap:8px;grid-template-columns:300px 1fr 1fr}
+  .grid-awards{gap:5px}
 }
 </style>
 </head>
@@ -94,15 +95,15 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
       </div>
 
       <div class="main">
-        <div class="fit">
-          <section class="card violet scroll">
+        <aside>
+          <section class="card violet">
             <div class="hd"><h3>Profile</h3></div>
             <div class="bd">
               Motivated student focused on computer science and applied AI. I build useful tools, compete in STEM events, and mentor younger students. Seeking a university where I can deepen theory and keep deploying real projects.
             </div>
           </section>
 
-          <section class="card scroll">
+          <section class="card">
             <div class="hd"><h3>Skills</h3></div>
             <div class="bd">
               <div class="chips">
@@ -115,19 +116,19 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
           </section>
 
-          <section class="card green scroll">
+          <section class="card">
             <div class="hd"><h3>Coursework & Certifications</h3></div>
             <div class="bd">
               <ul class="bullets">
                 <li>Algorithms & Data Structures (self-study)</li>
                 <li>Calculus; Probability & Statistics; Physics (Mechanics, E&amp;M)</li>
-                <li>Yandex Lyceum — Python, offline, 1 year (alumni)</li>
+                <li>Yandex Lyceum — Python (offline, 1 year, alumni)</li>
                 <li>Jusan Singularity — Kotlin track</li>
               </ul>
             </div>
           </section>
 
-          <section class="card orange scroll">
+          <section class="card">
             <div class="hd"><h3>Languages & Tests</h3></div>
             <div class="bd">
               <div class="chips">
@@ -137,7 +138,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
           </section>
 
-          <section class="card violet scroll">
+          <section class="card violet">
             <div class="hd"><h3>Education</h3></div>
             <div class="bd">
               <div class="item">
@@ -146,9 +147,9 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
               </div>
             </div>
           </section>
-        </div>
+        </aside>
 
-        <section class="section blue scroll">
+        <section class="section blue">
           <div class="hd"><h3>Projects</h3></div>
           <div class="bd items">
             <div class="item">
@@ -162,7 +163,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
             <div class="item">
               <h4>Drive Beyond — Windows .exe Application</h4>
-              <div class="meta">Team project (non-core member): coordinated task planning, built the first demo, maintained documentation, presented progress at reviews.</div>
+              <div class="meta">Team project (non-core member): coordinated task planning, built first demo, maintained documentation, presented progress at reviews.</div>
             </div>
             <div class="item">
               <h4>TB-Scan AI — Web App for Tuberculosis Detection from MRI</h4>
@@ -177,7 +178,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
           </div>
         </section>
 
-        <section class="section orange scroll">
+        <section class="section orange">
           <div class="hd"><h3>Honors & Awards</h3></div>
           <div class="bd grid-awards">
             <div class="aw">
@@ -192,7 +193,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             <div class="aw">
               <div class="group-title">Research & More</div>
               <div class="meta">2025 — Absolute 1st, JASTAR Forum Sciencefair (STEM), National — 300+ participants, prize 200,000 ₸</div>
-              <div class="meta">2025 — 2nd, Galymind HS Research Paper “Education in Suburbs of Almaty”, National — eval. by Prof. Michael Bechtel (NU)</div>
+              <div class="meta">2025 — 2nd, Galymind HS Research Paper “Education in Suburbs of Almaty”, National — evaluated by Prof. Michael Bechtel (NU)</div>
               <div class="meta">2024 — Participant, “Festival of Scientific Ideas”, NIS Medeu (School)</div>
               <div class="group-title">Competitions & Chess</div>
               <div class="meta">2025 — Semi-finalist, Samsung Solve for Tomorrow, National</div>
@@ -204,7 +205,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
           </div>
         </section>
 
-        <section class="section green scroll">
+        <section class="section green">
           <div class="hd"><h3>Leadership & Service</h3></div>
           <div class="bd items">
             <div class="item">
@@ -213,7 +214,7 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
             </div>
             <div class="item">
               <h4>Personal Mentor — NIS Medeu</h4>
-              <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11; organized March 8 appreciation (cards + Kazakh chocolate); delivered a 40-minute lesson for Grade 7 on adaptation, study planning, burnout prevention, and the Pomodoro method; received an official letter of gratitude.</div>
+              <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11; organized March 8 appreciation; delivered a 40-minute lesson for Grade 7 on adaptation, study planning, burnout prevention, and the Pomodoro method; received an official letter of gratitude.</div>
             </div>
           </div>
         </section>
