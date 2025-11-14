@@ -63,6 +63,12 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
 .card.violet .hd h3{color:var(--violet)}
 .grid-awards{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .aw{padding:6px;border:1px dashed #d8dee9;border-radius:10px}
+.award-tag{display:inline-block;padding:1px 6px;border-radius:6px;font-size:10px;font-weight:600;margin-right:6px;vertical-align:middle;border:1px solid}
+.award-gold{background:#fffbeb;color:#b45309;border-color:#fde68a}
+.award-silver{background:#f1f5f9;color:#475569;border-color:#e2e8f0}
+.award-bronze{background:#fff7ed;color:#9a3412;border-color:#fed7aa}
+.award-participant{background:#f8fafc;color:#475569;border-color:#e2e8f0}
+.award-item .meta{margin-bottom: 2px;}
 
 @media print{
   @page{size:A4;margin:6mm}
@@ -154,81 +160,83 @@ h1{margin:0;font-size:var(--h1);letter-spacing:.2px}
           </section>
         </aside>
 
-        <section class="section blue">
-          <div class="hd"><h3>Projects</h3></div>
-          <div class="bd items">
-            <div class="item">
-              <h4>MpoxDetection.ai — Full-Stack AI Website</h4>
-              <div class="meta">Modern full-stack site with integrated AI for image processing; public deployment.</div>
-              <ul class="bullets">
-                <li>Model-inference pipeline and compact, privacy-respecting UI</li>
-                <li>Quick screening for common rash diseases</li>
-              </ul>
-              <div class="meta">URL: https://huggingface.co/spaces/Galym7707/Mpoxdetection.ai</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <section class="section blue">
+            <div class="hd"><h3>Projects</h3></div>
+            <div class="bd items">
+              <div class="item">
+                <h4>MpoxDetection.ai — Full-Stack AI Website</h4>
+                <div class="meta">Modern full-stack site with integrated AI for image processing; public deployment.</div>
+                <ul class="bullets">
+                  <li>Model-inference pipeline and compact, privacy-respecting UI</li>
+                  <li>Quick screening for common rash diseases</li>
+                </ul>
+                <div class="meta">URL: https://huggingface.co/spaces/Galym7707/Mpoxdetection.ai</div>
+              </div>
+              <div class="item">
+                <h4>Drive Beyond — Windows .exe Application</h4>
+                <div class="meta">Team project (non-core member): coordinated task planning, built first demo, maintained documentation, presented progress at reviews.</div>
+              </div>
+              <div class="item">
+                <h4>TB-Scan AI — Web App for Tuberculosis Detection from MRI</h4>
+                <div class="meta">Uploads an MRI image and predicts tuberculosis using an AI model.</div>
+                <div class="meta">URL: fichka-tb-ai.hf.space</div>
+              </div>
+              <div class="item">
+                <h4>Freelance Web Projects</h4>
+                <div class="meta">Landing pages and dashboards for local clients; accessibility and performance focused.</div>
+                <div class="meta">Github repo: github.com/Galym7707/Lunight • URL: lunight.netlify.app</div>
+              </div>
             </div>
-            <div class="item">
-              <h4>Drive Beyond — Windows .exe Application</h4>
-              <div class="meta">Team project (non-core member): coordinated task planning, built first demo, maintained documentation, presented progress at reviews.</div>
+          </section>
+          <section class="section green">
+            <div class="hd"><h3>Leadership & Service</h3></div>
+            <div class="bd items">
+              <div class="item">
+                <h4>Teacher — Inclusive Academy (International Nonprofit Organization)</h4>
+                <div class="meta">2023 • Taught Python and Chess online to 3 children (8–9 y.o.) with disabilities.</div>
+              </div>
+              <div class="item">
+                <h4>Personal Mentor — NIS Medeu</h4>
+                <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11; organized March 8 appreciation; delivered a 40-minute lesson for Grade 7 on adaptation, study planning, burnout prevention, and the Pomodoro method; received an official letter of gratitude.</div>
+              </div>
             </div>
-            <div class="item">
-              <h4>TB-Scan AI — Web App for Tuberculosis Detection from MRI</h4>
-              <div class="meta">Uploads an MRI image and predicts tuberculosis using an AI model.</div>
-              <div class="meta">URL: fichka-tb-ai.hf.space</div>
-            </div>
-            <div class="item">
-              <h4>Freelance Web Projects</h4>
-              <div class="meta">Landing pages and dashboards for local clients; accessibility and performance focused.</div>
-              <div class="meta">Github repo: github.com/Galym7707/Lunight • URL: lunight.netlify.app</div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         <section class="section orange">
           <div class="hd"><h3>Honors & Awards</h3></div>
-          <div class="bd grid-awards">
-            <div class="aw">
+          <div class="bd items">
+            <div class="item award-item">
               <div class="group-title">AI & Tech</div>
-              <div class="meta">2024 — Bronze, Fizmat AI Olympiad (FAIO), National — among 301 teams</div>
-              <div class="meta">2024 — Bronze, “Science. Technology. Algorithmization. Programming” (STEM), International — among 375 participants</div>
-              <div class="meta">2023 — Olympiad in Computer Science — 3rd Place, NIS Medeu (School)</div>
-              <div class="group-title">Startups</div>
-              <div class="meta">2023 — Finalist, Caspian Startup, International</div>
-              <div class="meta">2024 — Top-15 Most Innovative Startups, Central Asian Startup Cup, International — 100+ teams from 4 countries</div>
+              <div class="meta"><span class="award-tag award-bronze">Bronze</span> Fizmat AI Olympiad (FAIO), National — 2024</div>
+              <div class="meta"><span class="award-tag award-bronze">Bronze</span> “Science. Technology. Algorithmization. Programming” (STEM), International — 2024</div>
+              <div class="meta"><span class="award-tag award-bronze">3rd Place</span> Olympiad in Computer Science, NIS Medeu (School) — 2023</div>
             </div>
-            <div class="aw">
+            <div class="item award-item">
+              <div class="group-title">Startups</div>
+              <div class="meta"><span class="award-tag award-participant">Finalist</span> Caspian Startup, International — 2023</div>
+              <div class="meta"><span class="award-tag award-silver">Top-15</span> Central Asian Startup Cup, International — 2024</div>
+            </div>
+            <div class="item award-item">
               <div class="group-title">Research & More</div>
-              <div class="meta">2025 — Absolute 1st, JASTAR Forum Sciencefair (STEM), National — 300+ participants, prize 200,000 ₸</div>
-              <div class="meta">2025 — 2nd, Galymind Research Paper “Education in Suburbs of Almaty”, International — evaluated by Prof. Michael Bechtel (NU)</div>
-              <div class="meta">2024 — Participant, “Festival of Scientific Ideas”, NIS Medeu (School)</div>
+              <div class="meta"><span class="award-tag award-gold">1st Place</span> JASTAR Forum Sciencefair (STEM), National — 2025</div>
+              <div class="meta"><span class="award-tag award-silver">2nd Place</span> Galymind HS Research Paper, International — 2025</div>
+              <div class="meta"><span class="award-tag award-participant">Participant</span> “Festival of Scientific Ideas”, NIS Medeu (School) — 2024</div>
+            </div>
+            <div class="item award-item">
               <div class="group-title">Competitions & Chess</div>
-              <div class="meta">2025 — Semi-finalist, Samsung Solve for Tomorrow, National</div>
-              <div class="meta">2024 — Participant, National Hackathon of HackOrgKz</div>
-              <div class="meta">2023 — First-Class Chess Player (Adult Category) — one rank below Candidate Master of Sport</div>
-              <div class="meta">2nd Place — City Chess Tournament (Almaty Schools), prize 100,000 ₸</div>
-              <div class="meta">2024 — 20th Place, KBTU OPEN Chess Tournament, International</div>
+              <div class="meta"><span class="award-tag award-participant">Semi-finalist</span> Samsung Solve for Tomorrow, National — 2025</div>
+              <div class="meta"><span class="award-tag award-participant">Participant</span> National Hackathon of HackOrgKz — 2024</div>
+              <div class="meta"><span class="award-tag award-silver">2nd Place</span> City Chess Tournament (Almaty Schools)</div>
+              <div class="meta"><span class="award-tag award-silver">20th Place</span> KBTU OPEN Chess Tournament, International — 2024</div>
+              <div class="meta"><span class="award-tag award-participant">1st Category</span> Chess Player (Adult Category) — 2023</div>
             </div>
           </div>
         </section>
 
-        <section class="section green">
-          <div class="hd"><h3>Leadership & Service</h3></div>
-          <div class="bd items">
-            <div class="item">
-              <h4>Teacher — Inclusive Academy (International Nonprofit Organization)</h4>
-              <div class="meta">2023 • Taught Python and Chess online to 3 children (8–9 y.o.) with disabilities.</div>
-            </div>
-            <div class="item">
-              <h4>Personal Mentor — NIS Medeu</h4>
-              <div class="meta">2024–2025 • Mentored five 8th-graders while in Grade 11; organized March 8 appreciation; delivered a 40-minute lesson for Grade 7 on adaptation, study planning, burnout prevention, and the Pomodoro method; received an official letter of gratitude.</div>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   </div>
 </body>
 </html>
-
-
-
-
